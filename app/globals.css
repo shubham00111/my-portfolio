@@ -119,3 +119,40 @@
     @apply bg-background text-foreground;
   }
 }
+
+.pattern-bg {
+  background: radial-gradient(var(--pattern-foreground) 1px, transparent 0);
+  background-size: 10px 10px;
+  background-position: center;
+}
+
+@layer utilities {
+  .screen-line-before {
+    position: relative;
+  }
+  .screen-line-before::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: 1;
+    height: 1px;
+    width: 200vw;
+    background: var(--border);
+  }
+
+  .screen-line-after {
+    position: relative;
+  }
+
+  .screen-line-after::after {
+    position: absolute;
+    content: "";
+    left: -100vw;
+    bottom: 0;
+    width: 200vw;
+    height: 1px;
+    background: var(--border);
+    z-index: 1;
+  }
+}

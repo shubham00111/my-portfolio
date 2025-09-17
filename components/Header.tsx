@@ -9,16 +9,15 @@ import NavItemButton from "./NavItemButton";
 
 const Header = () => {
   return (
-    <div className="grid grid-cols-[1fr_2fr_1fr]  border-1 border-[var(--border)] max-w-screen">
-      <div />
-      <div className="flex justify-between items-center px-2 border-x-1 border-x-[var(--border)] ">
-        <div>
+    <div className="sticky top-0 z-50 w-full max-w-screen screen-line-before screen-line-after">
+      <div className="w-full  max-w-3xl flex justify-between items-center mx-auto  px-2 border-x-1 border-x-[var(--border)] ">
+        <div className={`w-10 md:block md:w-16`}>
           <Link href={"/"}>
-            <Image src={headerLogo} alt="header-logo" width={60} />
+            <Image src={headerLogo} alt="header-logo" />
           </Link>
         </div>
-        <div className="flex gap-4">
-          <div className="flex gap-4 items-center px-3">
+        <div className="flex md:gap-4">
+          <div className="hidden md:flex gap-4 items-center px-3">
             {headerLinks.map(({ label, href }) => {
               return (
                 <Link
@@ -43,7 +42,6 @@ const Header = () => {
           />
         </div>
       </div>
-      <div />
     </div>
   );
 };
