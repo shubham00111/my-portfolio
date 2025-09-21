@@ -484,6 +484,15 @@ enhanced-resolve@^5.18.3:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
 
+framer-motion@^12.23.14:
+  version "12.23.14"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.23.14.tgz#43933a4f275c4c917ab1a75c1959d81fff30a326"
+  integrity sha512-8BQ6dvqOht2w8P1CwIEvAA0gypDR3fNG/M6/f5lT0QgNIKnJf7J43Bpv++NnCWU8YfmL47UEm2hbI0GRvdVhsQ==
+  dependencies:
+    motion-dom "^12.23.12"
+    motion-utils "^12.23.6"
+    tslib "^2.4.0"
+
 graceful-fs@^4.2.4:
   version "4.2.11"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz"
@@ -595,6 +604,26 @@ mkdirp@^3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-3.0.1.tgz"
   integrity sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==
+
+motion-dom@^12.23.12:
+  version "12.23.12"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.23.12.tgz#87974046e7e61bc4932f36d35e8eab6bb6f3e434"
+  integrity sha512-RcR4fvMCTESQBD/uKQe49D5RUeDOokkGRmz4ceaJKDBgHYtZtntC/s2vLvY38gqGaytinij/yi3hMcWVcEF5Kw==
+  dependencies:
+    motion-utils "^12.23.6"
+
+motion-utils@^12.23.6:
+  version "12.23.6"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.23.6.tgz#fafef80b4ea85122dd0d6c599a0c63d72881f312"
+  integrity sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==
+
+motion@^12.23.14:
+  version "12.23.14"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-12.23.14.tgz#7287978e7a2d87c9bbfc9a18ce1d5a5aa6836fc3"
+  integrity sha512-kcJde+A4AeUD2ujAhpvhCOjzt6NtXjqL9m0LsLdyPO5SPVQFsCpxVyLsqtS1o9Z+CEJ7U8kSIhsRSJF1oDZXfg==
+  dependencies:
+    framer-motion "^12.23.14"
+    tslib "^2.4.0"
 
 nanoid@^3.3.11, nanoid@^3.3.6:
   version "3.3.11"

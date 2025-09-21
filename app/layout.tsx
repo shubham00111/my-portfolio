@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Lekton } from "next/font/google";
+import { Inter, Lekton } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-
-const lekton = Lekton({
-  subsets: ["latin-ext"],
-  weight: ["400", "700"],
-});
+import { lekton } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
