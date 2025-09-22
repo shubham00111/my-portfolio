@@ -9,15 +9,15 @@ import { CodeXml, MapIcon } from "lucide-react";
 import IconDescription from "@/components/IconDescription";
 import { user } from "./data/user";
 import LinksSection from "@/components/LinksSection";
+import AboutMe from "@/components/AboutSection";
+import StackSection from "@/components/StackSection";
+import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Portfolio() {
-  {
-    console.log(user.about);
-  }
   return (
     <div className="max-w-screen border-1-[transparent] screen-line-after ">
       <div className="max-w-3xl mx-auto pattern-bg  border-x-1 border-x-[var(--border)">
-        <div className="mx-auto w-20 md:w-60">
+        <div className="mx-auto w-20 md:w-50">
           <Image src={headerLogo} alt="" className="rounded-full" />
         </div>
       </div>
@@ -45,7 +45,12 @@ export default function Portfolio() {
       </div>
       <SectionDivider />
       <LinksSection />
+      <SectionDivider lineBefore={false} />
+      <AboutMe />
       <SectionDivider />
+      <StackSection />
+      <SectionDivider />
+      <ExperienceSection />
     </div>
   );
 }
