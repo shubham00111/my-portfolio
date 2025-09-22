@@ -45,6 +45,7 @@ export default function Portfolio() {
       </div>
       <SectionDivider />
       <LinksSection />
+      <SectionDivider />
     </div>
   );
 }
