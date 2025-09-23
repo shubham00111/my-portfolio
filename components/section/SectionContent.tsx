@@ -8,7 +8,7 @@ const SectionContent = ({
   className?: string;
 }) => {
   return (
-    <div className={"max-w-3xl py-2 mx-auto border-x " + className}>
+    <div className={"max-w-3xl py-2 mx-auto border-x px-4 " + className}>
       {children}
     </div>
   );

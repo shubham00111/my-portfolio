@@ -26,31 +26,30 @@ const StackSection = () => {
   return (
     <SectionContainer>
       <SectionTitle title="Stack" />
-      <SectionContent className="pattern-bg">
-        <div className="px-4 flex flex-wrap gap-5 py-2 ">
-          {TECH_STACK.map(
-            ({ categories, href, key, title, theme }: TechStack) => {
-              const component = (
-                <Link href={href} key={key}>
-                  <Image
-                    src={`/stack_icons/${key}${
-                      theme != undefined ? (theme ? "-light" : "-dark") : ""
-                    }.svg`}
-                    width={45}
-                    height={45}
-                    alt="key"
-                  />
-                </Link>
-              );
-              return (
-                <TooltipWrapper
-                  tooltipContent={<h1 className="text-[14px]">{title}</h1>}
-                  component={component}
+      <SectionContent className="pattern-bg flex flex-wrap gap-5">
+        {TECH_STACK.map(
+          ({ categories, href, key, title, theme }: TechStack) => {
+            const component = (
+              <Link href={href}>
+                <Image
+                  src={`/stack_icons/${key}${
+                    theme != undefined ? (theme ? "-light" : "-dark") : ""
+                  }.svg`}
+                  width={45}
+                  height={45}
+                  alt="key"
                 />
-              );
-            }
-          )}
-        </div>
+              </Link>
+            );
+            return (
+              <TooltipWrapper
+                key={key}
+                tooltipContent={<h1 className="text-[14px]">{title}</h1>}
+                component={component}
+              />
+            );
+          }
+        )}
       </SectionContent>
     </SectionContainer>
   );

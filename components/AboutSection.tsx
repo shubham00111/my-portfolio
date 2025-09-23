@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     <SectionContainer>
       <SectionTitle title="About" />
-      <SectionContent className={"px-4 flex flex-col gap-4"}>
+      <SectionContent className={"flex flex-col gap-4"}>
         {user.aboutUser.map((textContent, index) => (
           <div key={index}>{textContent}</div>
         ))}

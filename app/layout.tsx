@@ -15,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${lekton.className} py-2`}>
+    <html lang="en" className="overflow-x-visible overflow-y-auto">
+      <body
+        className={`${lekton.className} py-2 overflow-x-visible overflow-y-auto`}
+      >
         <Header />
         {children}
       </body>

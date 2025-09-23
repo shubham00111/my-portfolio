@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <div className="sticky top-0 z-50 w-full max-w-screen screen-line-before screen-line-after">
+    <div className="sticky top-0 z-50 w-full max-w-screen screen-line-before screen-line-after ">
       <div className="w-full  max-w-3xl flex justify-between items-center mx-auto  px-2 border-x-1 border-x-[var(--border)] ">
         <motion.div
           initial={{ y: 10, opacity: 0 }}
