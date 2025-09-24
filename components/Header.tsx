@@ -45,7 +45,7 @@ const Header = () => {
             icon={<Icons.github />}
           />
           <NavItemButton
-            href={"https://www.linkedin.com/in/shubham00111/"}
+            href={"https://www.linkedin.com/in/shubhamrawatdev/"}
             icon={<Icons.linkedin />}
           />
         </div>
