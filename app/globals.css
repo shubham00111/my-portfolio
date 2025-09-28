@@ -7,7 +7,7 @@
   --text-light-color: #ffffff;
   --muted-foreground: lab(47.8878% 1.65477 -5.77283);
   --border: oklch(0.922 0 0);
-  --pattern-foreground: lab(93.97% 1.01 0.34);
+  --pattern-foreground: rgba(228, 228, 228, 0.393);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
