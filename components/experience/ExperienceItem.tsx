@@ -7,7 +7,7 @@ import { Position } from "@/app/data/experience";
 const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
     <>
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center screen">
         <Image
           src={experience.companyLogo}
           alt="tsys"

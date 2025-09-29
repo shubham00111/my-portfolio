@@ -14,7 +14,7 @@ const PostitionItem = ({ position }: { position: Position }) => {
     <div className="mt-5 mb-5">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
-          <div className="flex items-center">
+          <div className="flex items-center gap-5">
             <div
               className="flex size-6 shrink-0 items-center justify-center rounded-lg
                  bg-muted text-muted-foreground 
@@ -27,6 +27,14 @@ const PostitionItem = ({ position }: { position: Position }) => {
             )}
           </div>
         </CollapsibleTrigger>
+        <CollapsibleContent>
+          <ol className="text-sm ml-10 list-disc">
+            {position.description &&
+              position.description.map((desc, index) => {
+                return <li key={index}>{desc}</li>;
+              })}
+          </ol>
+        </CollapsibleContent>
       </Collapsible>
     </div>
   );

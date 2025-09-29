@@ -20,7 +20,11 @@ const ExperienceSection = () => {
       <SectionTitle title="Experience" />
       <SectionContent>
         {EXPERIENCES.map((experience) => {
-          return <ExperienceItem experience={experience} key={experience.id} />;
+          return (
+            <div className="screen-line-after" key={experience.id}>
+              <ExperienceItem experience={experience} />
+            </div>
+          );
         })}
       </SectionContent>
     </SectionContainer>
