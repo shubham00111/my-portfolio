@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import headerLogo from "@/app/assets/header-logo-light.svg";
 import Image from "next/image";
 import { headerLinks } from "@/app/constants";

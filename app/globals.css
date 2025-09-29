@@ -5,7 +5,7 @@
 
 :root {
   --text-light-color: #ffffff;
-  --muted-foreground: lab(47.8878% 1.65477 -5.77283);
+  --muted-foreground: oklch(0.552 0.016 285.938);
   --border: oklch(0.922 0 0);
   --pattern-foreground: rgba(228, 228, 228, 0.393);
   --radius: 0.625rem;
@@ -140,6 +140,9 @@
 }
 
 @layer utilities {
+  .ring-edge {
+    --tw-ring-color: var(--edge);
+  }
   .screen-line-before {
     position: relative;
   }

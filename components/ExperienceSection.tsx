@@ -3,27 +3,25 @@ import SectionTitle from "./section/SectionTitle";
 import SectionContainer from "./section/SectionContainer";
 import SectionContent from "./section/SectionContent";
 import Image from "next/image";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Button } from "./ui/button";
+import { ChevronsUpDown } from "lucide-react";
+import { EXPERIENCES } from "@/app/data/experience";
+import ExperienceItem from "./experience/ExperienceItem";
 
 const ExperienceSection = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <SectionContainer>
       <SectionTitle title="Experience" />
       <SectionContent>
-        <div className="flex gap-3 items-center">
-          <Image
-            src={"/experience/tsys.jpg"}
-            alt="tsys"
-            width={30}
-            height={30}
-            className="rounded-md"
-          />
-          <h1 className="font-bold">TSYS</h1>
-          <span className="relative flex items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
-            <span className="relative inline-flex size-2 rounded-full bg-info" />
-            <span className="sr-only">Current Employer</span>
-          </span>
-        </div>
+        {EXPERIENCES.map((experience) => {
+          return <ExperienceItem experience={experience} key={experience.id} />;
+        })}
       </SectionContent>
     </SectionContainer>
   );
