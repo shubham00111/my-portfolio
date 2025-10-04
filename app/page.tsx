@@ -36,7 +36,7 @@ export default function Portfolio() {
         </div>
       </div>
       <SectionDivider />
-      <div className="w-full  screen-line-before">
+      <div className=" screen-line-before">
         <div className={`mx-auto h-full border-x max-w-3xl p-5 `}>
           {user.about?.map(({ icon, title }: any, index) => (
             <IconDescription key={index} icon={icon} title={title} />

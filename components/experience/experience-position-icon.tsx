@@ -1,15 +1,12 @@
 import {
   BriefcaseBusinessIcon,
-  Code,
   CodeXmlIcon,
   GraduationCapIcon,
   LucideProps,
 } from "lucide-react";
 import React from "react";
 
-export type ExperiencePositionIcon =
-  /** Icon key used to render the position category in the UI. */
-  "code" | "education";
+export type ExperiencePositionIcon = "code" | "education";
 
 const iconMap = {
   code: CodeXmlIcon,

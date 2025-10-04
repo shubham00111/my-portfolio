@@ -6,15 +6,17 @@ import { Position } from "@/app/data/experience";
 
 const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
-    <>
-      <div className="flex gap-3 items-center screen">
-        <Image
-          src={experience.companyLogo}
-          alt="tsys"
-          width={30}
-          height={30}
-          className="rounded-md"
-        />
+    <div className="py-2">
+      <div className="flex gap-3 items-center py-2">
+        {experience.companyLogo && (
+          <Image
+            src={experience.companyLogo}
+            alt="tsys"
+            width={30}
+            height={30}
+            className="rounded-md"
+          />
+        )}
         <h1 className="font-bold">{experience.companyName}</h1>
         {experience.isCurrentEmployer && (
           <span className="relative flex items-center justify-center">
@@ -29,7 +31,7 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
           return <PostitionItem position={position} key={position.id} />;
         })}
       </div>
-    </>
+    </div>
   );
 };
 export default ExperienceItem;
