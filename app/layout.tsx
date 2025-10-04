@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { lekton } from "./fonts";
 import { Provider } from "@/components/providers/Provider";
+import Footer from "@/components/Footer";
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Provider>
           <Header />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>

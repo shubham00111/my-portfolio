@@ -51,6 +51,7 @@ export default function Portfolio() {
       <StackSection />
       <SectionDivider />
       <ExperienceSection />
+      <SectionDivider />
     </div>
   );
 }

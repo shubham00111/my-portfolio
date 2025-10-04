@@ -3,12 +3,13 @@ import Image from "next/image";
 import React from "react";
 import PostitionItem from "./PostitionItem";
 import { Position } from "@/app/data/experience";
+import { CircleSmall } from "lucide-react";
 
 const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
     <div className="py-2">
-      <div className="flex gap-3 items-center py-2">
-        {experience.companyLogo && (
+      <div className="flex gap-3 items-center py-4">
+        {experience.companyLogo ? (
           <Image
             src={experience.companyLogo}
             alt="tsys"
@@ -16,6 +17,8 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
             height={30}
             className="rounded-md"
           />
+        ) : (
+          <CircleSmall />
         )}
         <h1 className="font-bold">{experience.companyName}</h1>
         {experience.isCurrentEmployer && (
