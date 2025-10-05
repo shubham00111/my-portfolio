@@ -17,11 +17,7 @@ const PostitionItem = ({ position }: { position: Position }) => {
   const { start, end } = position.employmentPeriod;
   const isOngoing = !end;
   return (
-    <CollapsibleWithContext
-      defaultOpen={position.isExpanded}
-      className="py-2"
-      asChild
-    >
+    <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
       <div className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background">
         <CollapsibleTrigger
           className=" block w-full text-left select-none 
@@ -46,7 +42,7 @@ const PostitionItem = ({ position }: { position: Position }) => {
               <CollapsibleChevronsIcon />
             </div>
           </div>
-          <div className="flex items-center gap-3 pl-9">
+          <div className="flex items-center gap-3 pl-9 text-muted-foreground">
             {position.employmentType && (
               <>
                 <p className="text-sm">{position.employmentType}</p>

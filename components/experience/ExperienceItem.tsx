@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import PostitionItem from "./PostitionItem";
 import { Position } from "@/app/data/experience";
-import { CircleSmall } from "lucide-react";
+import { School } from "lucide-react";
 
 const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
@@ -18,9 +18,9 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
             className="rounded-md"
           />
         ) : (
-          <CircleSmall />
+          <School className="text-muted-foreground" />
         )}
-        <h1 className="font-bold">{experience.companyName}</h1>
+        <h1 className="font-bold ">{experience.companyName}</h1>
         {experience.isCurrentEmployer && (
           <span className="relative flex items-center justify-center">
             <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
@@ -29,7 +29,7 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
           </span>
         )}
       </div>
-      <div>
+      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
         {experience.positions.map((position: Position) => {
           return <PostitionItem position={position} key={position.id} />;
         })}
