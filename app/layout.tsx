@@ -18,14 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="overflow-x-visible overflow-y-auto"
-      suppressHydrationWarning
-    >
-      <body
-        className={`${lekton.className} py-2 overflow-x-visible overflow-y-auto`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${lekton.className} py-2`}>
         <Provider>
           <Header />
           {children}

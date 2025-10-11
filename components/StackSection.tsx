@@ -48,7 +48,7 @@ const StackSection = () => {
                 component={component}
               />
             );
-          }
+          },
         )}
       </SectionContent>
     </SectionContainer>

@@ -11,8 +11,8 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <div className="sticky top-0 z-50  max-w-screen screen-line-before screen-line-after overflow-x-hidden ">
-      <div className="w-full  max-w-3xl flex justify-between items-center mx-auto  px-2 border-x-1 border-x-[var(--border)] ">
+    <header className="sticky top-0 z-50 overflow-x-hidden">
+      <div className="screen-line-before screen-line-after mx-auto flex max-w-3xl items-center justify-between border-x-1 border-x-[var(--border)] bg-white px-2">
         <motion.div
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -25,7 +25,7 @@ const Header = () => {
           }
         </motion.div>
         <div className="flex md:gap-4">
-          <div className="hidden md:flex gap-4 items-center px-3">
+          <div className="hidden items-center gap-4 px-3 md:flex">
             {headerLinks.map(({ label, href }) => {
               return (
                 <Link
@@ -50,7 +50,7 @@ const Header = () => {
           />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

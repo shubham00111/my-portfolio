@@ -22,7 +22,7 @@ const useCollapsible = () => {
 
   if (!context) {
     throw new Error(
-      "Collapsible components must be used within a CollapsibleWithContext"
+      "Collapsible components must be used within a CollapsibleWithContext",
     );
   }
 

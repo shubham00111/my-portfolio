@@ -3,12 +3,7 @@ import React from "react";
 
 const LinkEffect = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p
-      className="
-      cursor-pointer
-      underline-offset-3
-      hover:underline"
-    >
+    <p className="cursor-pointer underline-offset-3 hover:underline">
       {children}
     </p>
   );

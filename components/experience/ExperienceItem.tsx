@@ -8,7 +8,7 @@ import { School } from "lucide-react";
 const ExperienceItem = ({ experience }: { experience: Experience }) => {
   return (
     <div className="py-2">
-      <div className="flex gap-3 items-center py-4">
+      <div className="flex items-center gap-3 py-4">
         {experience.companyLogo ? (
           <Image
             src={experience.companyLogo}
@@ -20,16 +20,16 @@ const ExperienceItem = ({ experience }: { experience: Experience }) => {
         ) : (
           <School className="text-muted-foreground" />
         )}
-        <h1 className="font-bold ">{experience.companyName}</h1>
+        <h1 className="font-bold">{experience.companyName}</h1>
         {experience.isCurrentEmployer && (
           <span className="relative flex items-center justify-center">
-            <span className="absolute inline-flex size-3 animate-ping rounded-full bg-info opacity-50" />
-            <span className="relative inline-flex size-2 rounded-full bg-info" />
+            <span className="bg-info absolute inline-flex size-3 animate-ping rounded-full opacity-50" />
+            <span className="bg-info relative inline-flex size-2 rounded-full" />
             <span className="sr-only">Current Employer</span>
           </span>
         )}
       </div>
-      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+      <div className="before:bg-border relative space-y-4 before:absolute before:left-3 before:h-full before:w-px">
         {experience.positions.map((position: Position) => {
           return <PostitionItem position={position} key={position.id} />;
         })}

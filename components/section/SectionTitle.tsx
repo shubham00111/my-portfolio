@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionTitle = ({ title }: { title: React.ReactNode }) => {
   return (
-    <div className="max-w-3xl mx-auto border-x screen-line-before font-bold text-3xl px-4 py-1 screen-line-after">
+    <div className="screen-line-before screen-line-after mx-auto max-w-3xl border-x px-4 py-1 text-3xl font-bold">
       {title}
     </div>
   );

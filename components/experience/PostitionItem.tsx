@@ -18,31 +18,24 @@ const PostitionItem = ({ position }: { position: Position }) => {
   const isOngoing = !end;
   return (
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
-      <div className="relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background">
-        <CollapsibleTrigger
-          className=" block w-full text-left select-none 
-            relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg hover:before:bg-accent2"
-        >
+      <div className="last:before:bg-background relative last:before:absolute last:before:h-full last:before:w-4">
+        <CollapsibleTrigger className="hover:before:bg-accent2 relative block w-full text-left select-none before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg">
           <div className="relative z-1 mb-1 flex items-center gap-3">
-            <div
-              className="flex size-6 shrink-0 items-center justify-center rounded-lg
-                 bg-muted text-muted-foreground 
-                border border-muted-foreground/15 ring-1 ring-edge ring-offset-1 ring-offset-background"
-            >
+            <div className="bg-muted text-muted-foreground border-muted-foreground/15 ring-edge ring-offset-background flex size-6 shrink-0 items-center justify-center rounded-lg border ring-1 ring-offset-1">
               <ExperiencePositionIcon className="size-4" icon={position.icon} />
             </div>
 
-            <h2 className=" flex-1 font-semibold text-balance">
+            <h2 className="flex-1 font-semibold text-balance">
               {position.title}
             </h2>
             <div
-              className="shrink-0 text-muted-foreground [&_svg]:size-4"
+              className="text-muted-foreground shrink-0 [&_svg]:size-4"
               aria-hidden
             >
               <CollapsibleChevronsIcon />
             </div>
           </div>
-          <div className="flex items-center gap-3 pl-9 text-muted-foreground">
+          <div className="text-muted-foreground flex items-center gap-3 pl-9">
             {position.employmentType && (
               <>
                 <p className="text-sm">{position.employmentType}</p>
@@ -57,7 +50,7 @@ const PostitionItem = ({ position }: { position: Position }) => {
               <span className="font-mono">-</span>
               {isOngoing ? (
                 <>
-                  <InfinityIcon className="size-4.5 text-sm transalte-y-[0.5px]" />
+                  <InfinityIcon className="transalte-y-[0.5px] size-4.5 text-sm" />
                 </>
               ) : (
                 <span className="text-sm">{end}</span>
@@ -65,8 +58,8 @@ const PostitionItem = ({ position }: { position: Position }) => {
             </div>
           </div>
         </CollapsibleTrigger>
-        <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down  pt-2">
-          <ol className="text-sm list-disc pl-9">
+        <CollapsibleContent className="data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down overflow-hidden pt-2 duration-300">
+          <ol className="list-disc pl-9 text-sm">
             {position.description &&
               position.description.map((desc, index) => {
                 return <li key={index}>{desc}</li>;
