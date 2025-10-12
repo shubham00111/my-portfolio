@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lekton.className} py-2`}>
+      <body className={`${lekton.className}`}>
         <Provider>
           <Header />
           {children}

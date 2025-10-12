@@ -20,7 +20,7 @@ const PostitionItem = ({ position }: { position: Position }) => {
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
       <div className="last:before:bg-background relative last:before:absolute last:before:h-full last:before:w-4">
         <CollapsibleTrigger className="hover:before:bg-accent2 relative block w-full text-left select-none before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg">
-          <div className="relative z-1 mb-1 flex items-center gap-3">
+          <div className="relative z-1 mb-1 flex gap-3">
             <div className="bg-muted text-muted-foreground border-muted-foreground/15 ring-edge ring-offset-background flex size-6 shrink-0 items-center justify-center rounded-lg border ring-1 ring-offset-1">
               <ExperiencePositionIcon className="size-4" icon={position.icon} />
             </div>

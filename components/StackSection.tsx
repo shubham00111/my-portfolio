@@ -26,7 +26,7 @@ const StackSection = () => {
   return (
     <SectionContainer>
       <SectionTitle title="Stack" />
-      <SectionContent className="pattern-bg flex flex-wrap gap-5">
+      <SectionContent className="flex flex-wrap gap-5 bg-zinc-950/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center p-4 [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
         {TECH_STACK.map(
           ({ categories, href, key, title, theme }: TechStack) => {
             const component = (

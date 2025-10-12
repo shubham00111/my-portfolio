@@ -12,6 +12,7 @@ export function Provider({
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
+      attribute={"class"}
     >
       {children}
     </NextThemeProvider>

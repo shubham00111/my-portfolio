@@ -18,7 +18,7 @@ const Header = () => {
     setShowMark(latest >= 100);
   });
   return (
-    <HeaderWrapper className="sticky top-0 z-50 overflow-x-hidden bg-white px-2 transition-shadow duration-300 data-[affix=true]:shadow-[0_0_16px_0_black]/8">
+    <HeaderWrapper className="dark:bg-background sticky top-0 z-50 overflow-x-hidden overflow-y-hidden bg-white px-2 pt-2 transition-shadow duration-300 data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:text-white">
       <div className="screen-line-before screen-line-after mx-auto flex h-15 items-center justify-between border-x-1 border-x-[var(--border)] px-2 md:max-w-3xl">
         <div
           className={`w-10 md:w-16 ${showMark ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} transition-all duration-300`}
