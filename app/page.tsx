@@ -22,7 +22,7 @@ export default function Portfolio() {
         </div>
       </div>
       <div className="screen-line-before mx-auto flex max-w-3xl border-x-1 border-x-[var(--border)]">
-        <div className="w-40 border-r p-0.5 md:w-45">
+        <div className="w-20 border-r p-0.5 md:w-30 xl:w-45">
           <Image
             src={profileImage}
             alt="profile_pic"

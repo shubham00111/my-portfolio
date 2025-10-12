@@ -13,7 +13,7 @@ const LinksSection = () => {
         <div className="border-edge border-r"></div>
         <div className="border-edge border-l"></div>
       </div>
-      <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 border-x-1">
+      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 border-x-1 sm:grid-cols-2">
         {SOCIAL_LINKS.map(
           ({ icon, title, description, href }: SocialLink, index) => {
             return (
