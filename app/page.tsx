@@ -15,14 +15,14 @@ import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Portfolio() {
   return (
-    <div className="border-1-[transparent] screen-line-after max-w-screen overflow-x-hidden">
-      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 select-none">
-        <div className="mx-auto w-20 md:w-50">
+    <div className="border-1-[transparent] screen-line-after overflow-x-hidden px-2">
+      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 px-2 select-none">
+        <div className="mx-auto w-40 md:w-50">
           <Image src={headerLogo} alt="" className="rounded-full" />
         </div>
       </div>
       <div className="screen-line-before mx-auto flex max-w-3xl border-x-1 border-x-[var(--border)]">
-        <div className="border-r p-0.5 md:w-45">
+        <div className="w-40 border-r p-0.5 md:w-45">
           <Image
             src={profileImage}
             alt="profile_pic"

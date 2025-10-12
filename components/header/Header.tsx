@@ -18,8 +18,8 @@ const Header = () => {
     setShowMark(latest >= 100);
   });
   return (
-    <HeaderWrapper className="sticky top-0 z-50 overflow-x-hidden bg-white transition-shadow duration-300 data-[affix=true]:shadow-[0_0_16px_0_black]/8">
-      <div className="screen-line-before screen-line-after mx-auto flex max-w-3xl items-center justify-between border-x-1 border-x-[var(--border)] px-2">
+    <HeaderWrapper className="sticky top-0 z-50 overflow-x-hidden bg-white px-2 transition-shadow duration-300 data-[affix=true]:shadow-[0_0_16px_0_black]/8">
+      <div className="screen-line-before screen-line-after mx-auto flex items-center justify-between border-x-1 border-x-[var(--border)] px-2 md:max-w-3xl">
         <div
           className={`w-10 md:w-16 ${showMark ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} transition-all duration-300`}
         >
@@ -27,8 +27,8 @@ const Header = () => {
             <Image src={headerLogo} alt="header-logo" />
           </Link>
         </div>
-        <div className="flex md:gap-4">
-          <div className="hidden items-center gap-4 px-3 md:flex">
+        <div className="flex gap-2 md:gap-4">
+          <div className="hidden items-center px-3 sm:gap-4 md:flex">
             {headerLinks.map(({ label, href }) => {
               return (
                 <Link
