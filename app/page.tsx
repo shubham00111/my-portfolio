@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import headerLogo from "@/app/assets/header-logo-light.svg";
 import profileImage from "@/app/assets/profile_pic.png";
 import Image from "next/image";
@@ -15,8 +15,8 @@ import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Portfolio() {
   return (
-    <div className="border-1-[transparent] screen-line-after max-w-screen">
-      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1">
+    <div className="border-1-[transparent] screen-line-after max-w-screen overflow-x-hidden">
+      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 select-none">
         <div className="mx-auto w-20 md:w-50">
           <Image src={headerLogo} alt="" className="rounded-full" />
         </div>
@@ -26,7 +26,7 @@ export default function Portfolio() {
           <Image
             src={profileImage}
             alt="profile_pic"
-            className="ring-border rounded-full ring ring-offset-2"
+            className="ring-border rounded-full ring ring-offset-2 select-none"
           />
         </div>
         <div className="flex flex-1 flex-col">
