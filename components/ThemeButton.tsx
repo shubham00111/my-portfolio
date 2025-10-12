@@ -14,7 +14,7 @@ const ThemeButton = () => {
       variant={"outline"}
       size={"icon"}
       asChild
-      className="rounded-full"
+      className="cursor-pointer rounded-full"
       onClick={() => {
         setTheme(theme === "light" ? "dark" : "light");
       }}

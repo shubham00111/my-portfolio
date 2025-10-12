@@ -8,9 +8,9 @@ import SectionContent from "./section/SectionContent";
 
 const Footer = () => {
   return (
-    <>
-      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1">
-        <div className="mx-auto w-20 md:w-50">
+    <div className="px-2">
+      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 px-2">
+        <div className="mx-auto w-20 px-2 md:w-50">
           <Image src={headerLogo} alt="" className="rounded-full" />
         </div>
       </div>
@@ -20,7 +20,7 @@ const Footer = () => {
           Inspired by ncdai & ui.shadcn.com.
         </SectionContent>
       </SectionContainer>
-    </>
+    </div>
   );
 };
 
