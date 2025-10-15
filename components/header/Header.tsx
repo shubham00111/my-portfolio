@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import headerLogo from "@/app/assets/header-logo-light.svg";
+import lightModeHeaderLogo from "@/app/assets/header-logo-light.png";
+import darkModeHeaderLogo from "@/app/assets/header-logo-dark.png";
 import Image from "next/image";
 import { headerLinks } from "@/app/constants";
 import { Icons } from "@/app/constants/icons";
@@ -10,8 +11,10 @@ import NavItemButton from "../NavItemButton";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import HeaderWrapper from "./HeaderWrapper";
 import ThemeButton from "../ThemeButton";
+import { useTheme } from "next-themes";
 
 const Header = () => {
+  const { theme } = useTheme();
   const [showMark, setShowMark] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -24,11 +27,14 @@ const Header = () => {
           className={`w-10 md:w-16 ${showMark ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} transition-all duration-300`}
         >
           <Link href={"/"}>
-            <Image src={headerLogo} alt="header-logo" />
+            <Image
+              src={theme == "light" ? lightModeHeaderLogo : darkModeHeaderLogo}
+              alt="header-logo"
+            />
           </Link>
         </div>
         <div className="flex gap-2 md:gap-4">
-          <div className="hidden items-center px-3 sm:gap-4 md:flex">
+          <div className="dark: hidden items-center px-3 sm:gap-4 md:flex">
             {headerLinks.map(({ label, href }) => {
               return (
                 <Link
@@ -36,7 +42,7 @@ const Header = () => {
                   href={href}
                   className={` ${
                     label === "Portfolio" ? "text-black" : "text-gray-400"
-                  } hover:text-black`}
+                  } dark:hover:text-ba text-black transition-colors duration-300 hover:text-neutral-400 dark:text-white dark:hover:text-neutral-400`}
                 >
                   {label}
                 </Link>
