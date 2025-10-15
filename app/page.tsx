@@ -1,31 +1,22 @@
 "use client";
-import Header from "@/components/header/Header";
-import lightModeHeaderLogo from "@/app/assets/header-logo-light.png";
-import darkModeHeaderLogo from "@/app/assets/header-logo-dark.png";
+
 import profileImage from "@/app/assets/profile_pic.png";
 import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
-import { inter } from "@/app/fonts";
-import { CodeXml, MapIcon } from "lucide-react";
 import IconDescription from "@/components/IconDescription";
 import { user } from "./data/user";
 import LinksSection from "@/components/LinksSection";
 import AboutMe from "@/components/AboutSection";
 import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import { useTheme } from "next-themes";
+import BrandImage from "@/components/BrandImage";
 
 export default function Portfolio() {
-  const { theme } = useTheme();
   return (
     <div className="border-1-[transparent] screen-line-after overflow-x-hidden px-2">
       <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 px-2 select-none dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
         <div className="mx-auto w-40 md:w-50">
-          <Image
-            src={theme == "light" ? lightModeHeaderLogo : darkModeHeaderLogo}
-            alt=""
-            className="rounded-full"
-          />
+          <BrandImage />
         </div>
       </div>
       <div className="screen-line-before mx-auto flex max-w-3xl border-x-1 border-x-[var(--border)]">

@@ -1,9 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import lightModeHeaderLogo from "@/app/assets/header-logo-light.png";
-import darkModeHeaderLogo from "@/app/assets/header-logo-dark.png";
-import Image from "next/image";
 import { headerLinks } from "@/app/constants";
 import { Icons } from "@/app/constants/icons";
 import { Button } from "../ui/button";
@@ -12,9 +9,9 @@ import { useScroll, useMotionValueEvent } from "framer-motion";
 import HeaderWrapper from "./HeaderWrapper";
 import ThemeButton from "../ThemeButton";
 import { useTheme } from "next-themes";
+import BrandImage from "../BrandImage";
 
 const Header = () => {
-  const { theme } = useTheme();
   const [showMark, setShowMark] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -27,10 +24,7 @@ const Header = () => {
           className={`w-10 md:w-16 ${showMark ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} transition-all duration-300`}
         >
           <Link href={"/"}>
-            <Image
-              src={theme == "light" ? lightModeHeaderLogo : darkModeHeaderLogo}
-              alt="header-logo"
-            />
+            <BrandImage />
           </Link>
         </div>
         <div className="flex gap-2 md:gap-4">
