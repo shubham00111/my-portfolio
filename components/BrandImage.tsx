@@ -2,8 +2,8 @@
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import lightModeHeaderLogo from "@/app/assets/header-logo-light.png";
-import darkModeHeaderLogo from "@/app/assets/header-logo-dark.png";
+import lightModeHeaderLogo from "@/public/header-logo-light.png";
+import darkModeHeaderLogo from "@/public/header-logo-dark.png";
 const BrandImage = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);

@@ -49,7 +49,7 @@ export const user = {
       icon: <Mail />,
       title: (
         <div>
-          <Link href={"shubhamb23efd@gmail.com"}>
+          <Link href={"https://shubhamb23efd@gmail.com"}>
             <LinkEffect>shubhamb23efd@gmail.com</LinkEffect>
           </Link>
         </div>

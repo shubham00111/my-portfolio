@@ -22,14 +22,16 @@ const LinksSection = () => {
                   <div className="absolute top-1/2 right-2 -translate-y-1/2">
                     <ArrowUpRight size={15} color="var(--muted-foreground)" />
                   </div>
-                  <div className="">
+                  <div className="relative size-12 shrink-0">
                     <Image
+                      className="rounded-xl"
                       src={icon}
                       color="var(--muted-foreground)"
                       alt={description}
                       width={50}
                       height={50}
                     />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent ring-inset dark:ring-white/10"></div>
                   </div>
                   <div className="flex flex-col">
                     <h2 className="font-bold underline-offset-3 group-hover:underline">

@@ -25,7 +25,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://x.com/Shubham04441343",
   },
   {
-    icon: "/social_icons/leetcode.webp",
+    icon: "/social_icons/leetcode.png",
     title: "LeetCode",
     description: "@The_Runner07",
     href: "https://leetcode.com/u/The_Runner07/",
