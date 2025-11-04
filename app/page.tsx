@@ -10,6 +10,7 @@ import AboutMe from "@/components/AboutSection";
 import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import BrandImage from "@/components/BrandImage";
+import ContributionSection from "@/components/ContributionSection";
 
 export default function Portfolio() {
   return (
@@ -45,6 +46,8 @@ export default function Portfolio() {
       <LinksSection />
       <SectionDivider lineBefore={false} />
       <AboutMe />
+      <SectionDivider />
+      <ContributionSection />
       <SectionDivider />
       <StackSection />
       <SectionDivider />

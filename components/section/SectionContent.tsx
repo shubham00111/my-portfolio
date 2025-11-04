@@ -1,5 +1,5 @@
 import React from "react";
-
+import { cn } from "@/lib/utils";
 const SectionContent = ({
   children,
   className = "",
@@ -8,7 +8,7 @@ const SectionContent = ({
   className?: string;
 }) => {
   return (
-    <div className={"mx-auto max-w-3xl border-x px-4 py-2 " + className}>
+    <div className={cn("mx-auto max-w-3xl border-x px-4 py-2", className)}>
       {children}
     </div>
   );
