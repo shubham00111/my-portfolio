@@ -34,7 +34,7 @@ const ContributionSection = () => {
 
   return (
     <SectionContainer>
-      <SectionContent className="screen-line-before py-2">
+      <SectionContent className="screen-line-before px-3 py-2">
         <TooltipProvider>
           <ContributionGraph
             data={data}
@@ -44,7 +44,7 @@ const ContributionSection = () => {
             blockRadius={0}
           >
             <ContributionGraphCalendar
-              className="no-scrollbar px-2 pt-2"
+              className="no-scrollbar pt-2"
               title="Github Contributions"
             >
               {({ activity, dayIndex, weekIndex }) => (
