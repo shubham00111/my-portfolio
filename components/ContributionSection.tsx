@@ -28,7 +28,6 @@ const ContributionSection = () => {
         `https://github-contributions-api.jogruber.de/v4/${"shubham00111"}?y=last`,
       );
       const response = await githubData.json();
-      console.log(response);
       setData(response.contributions);
     })();
   }, []);
