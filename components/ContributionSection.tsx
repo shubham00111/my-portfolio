@@ -65,7 +65,7 @@ const ContributionSection = () => {
                 </Tooltip>
               )}
             </ContributionGraphCalendar>
-            <ContributionGraphFooter className="px-2">
+            <ContributionGraphFooter>
               <ContributionGraphTotalCount>
                 {({ totalCount, year }) => (
                   <div className="text-muted-foreground">
