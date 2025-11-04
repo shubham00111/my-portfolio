@@ -7,8 +7,7 @@ import ExperienceItem from "./experience/ExperienceItem";
 
 const ExperienceSection = () => {
   return (
-    <SectionContainer>
-      <SectionTitle title="Experience" />
+    <SectionContainer className="screen-line-before">
       <SectionContent>
         {EXPERIENCES.map((experience, index) => {
           return (
