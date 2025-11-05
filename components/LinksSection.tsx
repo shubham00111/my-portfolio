@@ -2,11 +2,13 @@
 import { SOCIAL_LINKS } from "@/app/data/Socials";
 import { SocialLink } from "@/app/data/Socials";
 import { ArrowUpRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const LinksSection = () => {
+  const { theme } = useTheme();
   return (
     <div className="screen-line-before relative">
       <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
@@ -15,7 +17,7 @@ const LinksSection = () => {
       </div>
       <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 border-x-1 sm:grid-cols-2">
         {SOCIAL_LINKS.map(
-          ({ icon, title, description, href }: SocialLink, index) => {
+          ({ icon, title, description, href, darkIcon }: SocialLink, index) => {
             return (
               <Link href={href} key={index} target="_blank">
                 <div className="group screen-line-before screen-line-after relative flex gap-3 p-3">
@@ -25,7 +27,9 @@ const LinksSection = () => {
                   <div className="relative size-12 shrink-0">
                     <Image
                       className="rounded-xl"
-                      src={icon}
+                      src={
+                        darkIcon ? (theme === "dark" ? darkIcon : icon) : icon
+                      }
                       color="var(--muted-foreground)"
                       alt={description}
                       width={50}
