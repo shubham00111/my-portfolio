@@ -11,6 +11,7 @@ import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import BrandImage from "@/components/BrandImage";
 import ContributionSection from "@/components/ContributionSection";
+import { ShimmeringText } from "@/components/shimmering-text";
 
 export default function Portfolio() {
   return (
@@ -31,7 +32,12 @@ export default function Portfolio() {
         <div className="flex flex-1 flex-col">
           <div className="grow bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56"></div>
           <div className="border-t p-2 text-2xl font-bold">Shubham Rawat</div>
-          <div className="border-t p-2 text-gray-600">Front End Developer</div>
+          <div className="border-t p-2 text-gray-600">
+            <ShimmeringText
+              className="text-xl font-medium"
+              text="Front End Developer"
+            />
+          </div>
         </div>
       </div>
       <SectionDivider />
