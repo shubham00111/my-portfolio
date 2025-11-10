@@ -27,9 +27,7 @@ const LinksSection = () => {
                   <div className="relative size-12 shrink-0">
                     <Image
                       className="rounded-xl"
-                      src={
-                        darkIcon ? (theme === "dark" ? darkIcon : icon) : icon
-                      }
+                      src={icon}
                       color="var(--muted-foreground)"
                       alt={description}
                       width={50}
