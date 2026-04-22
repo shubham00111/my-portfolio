@@ -1,55 +1,59 @@
-"use client";
 import { SOCIAL_LINKS } from "@/app/data/Socials";
-import { SocialLink } from "@/app/data/Socials";
 import { ArrowUpRight } from "lucide-react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+const CARD_ACCENTS = [
+  "hover:bg-[#ff90e8]",
+  "hover:bg-[#ffde59]",
+  "hover:bg-[#72ef36]",
+  "hover:bg-[#99c7fb]",
+];
 
 const LinksSection = () => {
-  const { theme } = useTheme();
   return (
-    <div className="screen-line-before relative">
-      <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-        <div className="border-edge border-r"></div>
-        <div className="border-edge border-l"></div>
+    <section id="connect" className="border-b-3 border-foreground">
+      <div className="mx-auto max-w-5xl px-5 py-16">
+        <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+          05
+        </p>
+        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+          Connect
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {SOCIAL_LINKS.map(({ icon, title, description, href }, index) => (
+            <Link
+              key={title}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`nb-card-hover p-4 group flex items-center gap-4 bg-card ${CARD_ACCENTS[index % CARD_ACCENTS.length]}`}
+            >
+              <div className="size-11 shrink-0 border-3 border-foreground overflow-hidden bg-muted flex items-center justify-center">
+                <Image
+                  src={icon}
+                  alt={title}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-black text-sm">{title}</p>
+                <p className="text-muted-foreground text-xs truncate">
+                  {description}
+                </p>
+              </div>
+              <ArrowUpRight
+                size={18}
+                className="shrink-0 text-muted-foreground"
+              />
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 border-x-1 sm:grid-cols-2">
-        {SOCIAL_LINKS.map(
-          ({ icon, title, description, href, darkIcon }: SocialLink, index) => {
-            return (
-              <Link href={href} key={index} target="_blank">
-                <div className="group screen-line-before screen-line-after relative flex gap-3 p-3">
-                  <div className="absolute top-1/2 right-2 -translate-y-1/2">
-                    <ArrowUpRight size={15} color="var(--muted-foreground)" />
-                  </div>
-                  <div className="relative size-12 shrink-0">
-                    <Image
-                      className="rounded-xl"
-                      src={icon}
-                      color="var(--muted-foreground)"
-                      alt={description}
-                      width={50}
-                      height={50}
-                    />
-                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent ring-inset dark:ring-white/10"></div>
-                  </div>
-                  <div className="flex flex-col">
-                    <h2 className="font-bold underline-offset-3 group-hover:underline">
-                      {title}
-                    </h2>
-                    <h3 className="text-[var(--muted-foreground)]">
-                      {description}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
-            );
-          },
-        )}
-      </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,57 +1,53 @@
-import React from "react";
-import SectionTitle from "./section/SectionTitle";
-import SectionContainer from "./section/SectionContainer";
-import SectionContent from "./section/SectionContent";
-import { TECH_STACK, TechStack } from "@/app/data/tech-stack";
-import Image from "next/image";
-import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { SKILL_CATEGORIES } from "@/app/data/tech-stack";
 
-const TooltipWrapper = ({
-  component,
-  tooltipContent,
-}: {
-  component: React.ReactNode;
-  tooltipContent: React.ReactNode;
-}) => {
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>{component}</TooltipTrigger>
-      <TooltipContent>{tooltipContent}</TooltipContent>
-    </Tooltip>
-  );
+const CATEGORY_COLORS: Record<string, string> = {
+  Languages: "bg-[#ff90e8]",
+  Frontend: "bg-[#ffde59]",
+  Backend: "bg-[#72ef36]",
+  Testing: "bg-[#ffc59b]",
+  "Cloud & DevOps": "bg-[#99c7fb]",
+  Tools: "bg-[#c9b1ff]",
 };
 
 const StackSection = () => {
   return (
-    <SectionContainer>
-      <SectionTitle title="Stack" />
-      <SectionContent className="flex flex-wrap gap-5 bg-zinc-950/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center p-4 [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
-        {TECH_STACK.map(
-          ({ categories, href, key, title, theme }: TechStack) => {
-            const component = (
-              <Link href={href}>
-                <Image
-                  src={`/stack_icons/${key}${
-                    theme != undefined ? (theme ? "-light" : "-dark") : ""
-                  }.svg`}
-                  width={45}
-                  height={45}
-                  alt="key"
-                />
-              </Link>
-            );
+    <section id="skills" className="border-b-3 border-foreground">
+      <div className="mx-auto max-w-5xl px-5 py-16">
+        <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+          02
+        </p>
+        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+          Skills
+        </h2>
+
+        <div className="space-y-5">
+          {SKILL_CATEGORIES.map(({ label, skills }) => {
+            const colorClass = CATEGORY_COLORS[label] ?? "bg-[#f4f4f0]";
             return (
-              <TooltipWrapper
-                key={key}
-                tooltipContent={<h1 className="text-[14px]">{title}</h1>}
-                component={component}
-              />
+              <div
+                key={label}
+                className="grid sm:grid-cols-4 gap-3 items-start"
+              >
+                <div className="sm:col-span-1">
+                  <span
+                    className={`${colorClass} border-3 border-foreground px-3 py-1.5 text-xs font-black uppercase tracking-wide shadow-[2px_2px_0px_0px_#000] inline-block`}
+                  >
+                    {label}
+                  </span>
+                </div>
+                <div className="sm:col-span-3 flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span key={skill} className="nb-tag">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             );
-          },
-        )}
-      </SectionContent>
-    </SectionContainer>
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 

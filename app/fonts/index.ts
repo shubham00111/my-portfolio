@@ -1,11 +1,6 @@
-import { Inter, Lekton } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 
-export const lekton = Lekton({
-  subsets: ["latin-ext"],
-  weight: ["400", "700"],
-});
-
-export const inter = Inter({
+export const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });

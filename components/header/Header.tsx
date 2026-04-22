@@ -1,57 +1,91 @@
 "use client";
+
 import Link from "next/link";
-import React, { useContext, useState } from "react";
-import { headerLinks } from "@/app/constants";
-import { Icons } from "@/app/constants/icons";
-import { Button } from "../ui/button";
-import NavItemButton from "../NavItemButton";
+import { useState } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
-import HeaderWrapper from "./HeaderWrapper";
+import { Download, Github } from "lucide-react";
 import ThemeButton from "../ThemeButton";
-import { useTheme } from "next-themes";
-import BrandImage from "../BrandImage";
+import { user } from "@/app/data/user";
+
+const NAV_LINKS = [
+  { label: "About", href: "#about", hoverBg: "hover:bg-[#ff90e8]" },
+  { label: "Skills", href: "#skills", hoverBg: "hover:bg-[#ffde59]" },
+  { label: "Experience", href: "#experience", hoverBg: "hover:bg-[#72ef36]" },
+  { label: "Connect", href: "#connect", hoverBg: "hover:bg-[#99c7fb]" },
+];
 
 const Header = () => {
-  const [showMark, setShowMark] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setShowMark(latest >= 100);
-  });
-  return (
-    <HeaderWrapper className="dark:bg-background/60 sticky top-0 z-50 overflow-x-hidden overflow-y-hidden bg-white/60 px-2 pt-2 backdrop-blur transition-shadow duration-300 data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:text-white">
-      <div className="screen-line-before screen-line-after mx-auto flex h-15 items-center justify-between border-x-1 border-x-[var(--border)] px-2 md:max-w-3xl">
-        <div
-          className={`w-10 md:w-16 ${showMark ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"} transition-all duration-300`}
-        >
-          <Link href={"/"}>
-            <BrandImage />
-          </Link>
-        </div>
-        <div className="flex gap-2 md:gap-4">
-          <div className="dark: hidden items-center px-3 sm:gap-4 md:flex">
-            {headerLinks.map(({ label, href }) => {
-              return (
-                <Link
-                  key={label}
-                  href={href}
-                  className={` ${
-                    label === "Portfolio" ? "text-black" : "text-gray-400"
-                  } dark:hover:text-ba text-black transition-colors duration-300 hover:text-neutral-400 dark:text-white dark:hover:text-neutral-400`}
-                >
-                  {label}
-                </Link>
-              );
-            })}
-          </div>
-          <NavItemButton
-            href={"https://github.com/shubham00111"}
-            icon={<Icons.github />}
-          />
 
-          <ThemeButton />
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest >= 60);
+  });
+
+  return (
+    <header className={`sticky top-0 z-50 bg-background transition-shadow duration-200 ${scrolled ? "shadow-[0_5px_0_0_#000]" : ""}`}>
+      {/* Colorful strip */}
+      <div className="flex h-[5px] border-b-3 border-foreground">
+        <div className="flex-1 bg-[#ff90e8]" />
+        <div className="flex-1 bg-[#ffde59]" />
+        <div className="flex-1 bg-[#72ef36]" />
+        <div className="flex-1 bg-[#99c7fb]" />
+        <div className="flex-1 bg-[#c9b1ff]" />
+        <div className="flex-1 bg-[#ffc59b]" />
+      </div>
+
+      {/* Nav bar */}
+      <div className="border-b-3 border-foreground">
+        <div className="mx-auto max-w-5xl px-5 h-14 flex items-center justify-between gap-4">
+
+          {/* Logo + name */}
+          <Link href="/" className="flex items-center gap-3 select-none shrink-0">
+            <span className="font-black text-xl tracking-tighter">
+              S<span className="text-[#ff90e8]">R</span>
+            </span>
+            <span className="hidden sm:block w-px h-5 bg-foreground/30" />
+            <span className="hidden sm:block text-sm font-bold tracking-tight">
+              Shubham Rawat
+            </span>
+          </Link>
+
+          {/* Center nav */}
+          <nav className="hidden md:flex items-center gap-0.5">
+            {NAV_LINKS.map(({ label, href, hoverBg }) => (
+              <a
+                key={label}
+                href={href}
+                className={`px-3 py-1.5 text-sm font-bold border-2 border-transparent ${hoverBg} hover:border-foreground hover:shadow-[2px_2px_0px_0px_#000] transition-all duration-100`}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Right actions */}
+          <div className="flex items-center gap-2 shrink-0">
+            <a
+              href={user.resumePath}
+              download
+              className="hidden sm:flex nb-btn-primary px-3 py-1.5 text-sm"
+            >
+              <Download size={14} />
+              Resume
+            </a>
+            <Link
+              href={user.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nb-btn-secondary px-3 py-1.5 text-sm"
+            >
+              <Github size={14} />
+              <span className="hidden lg:inline">GitHub</span>
+            </Link>
+            <ThemeButton />
+          </div>
         </div>
       </div>
-    </HeaderWrapper>
+    </header>
   );
 };
 

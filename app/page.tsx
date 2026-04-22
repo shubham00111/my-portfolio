@@ -1,64 +1,157 @@
-"use client";
-
-import profileImage from "@/app/assets/profile_pic.png";
 import Image from "next/image";
-import SectionDivider from "@/components/SectionDivider";
-import IconDescription from "@/components/IconDescription";
-import { user } from "./data/user";
-import LinksSection from "@/components/LinksSection";
-import AboutMe from "@/components/AboutSection";
+import Link from "next/link";
+import { ArrowUpRight, Download, Github, Mail, MapPin } from "lucide-react";
+import profileImage from "@/app/assets/profile_pic.png";
+import AboutSection from "@/components/AboutSection";
 import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import BrandImage from "@/components/BrandImage";
 import ContributionSection from "@/components/ContributionSection";
-import { ShimmeringText } from "@/components/shimmering-text";
+import LinksSection from "@/components/LinksSection";
+import { user } from "./data/user";
+
+const STATS = [
+  {
+    value: "80%",
+    label: "Infra Cost Reduction",
+    bg: "bg-[#ff90e8]",
+  },
+  {
+    value: "60%",
+    label: "Faster Delivery",
+    bg: "bg-[#ffde59]",
+  },
+  {
+    value: "90%",
+    label: "Security Vulns Fixed",
+    bg: "bg-[#72ef36]",
+  },
+];
 
 export default function Portfolio() {
   return (
-    <div className="border-1-[transparent] screen-line-after overflow-x-hidden px-2">
-      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 px-2 select-none dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
-        <div className="mx-auto w-40 md:w-50">
-          <BrandImage />
-        </div>
-      </div>
-      <div className="screen-line-before mx-auto flex max-w-3xl border-x-1 border-x-[var(--border)]">
-        <div className="w-20 border-r p-0.5 md:w-30 xl:w-45">
-          <Image
-            src={profileImage}
-            alt="profile_pic"
-            className="ring-border ring-offset-background rounded-full ring ring-offset-2 select-none"
-          />
-        </div>
-        <div className="flex flex-1 flex-col">
-          <div className="grow bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56"></div>
-          <div className="border-t p-2 text-2xl font-bold">Shubham Rawat</div>
-          <div className="border-t p-2 text-gray-600">
-            <ShimmeringText
-              className="text-xl font-medium"
-              text="Front End Developer"
-            />
+    <main>
+      {/* ── HERO ── */}
+      <section className="border-b-3 border-foreground">
+        <div className="mx-auto max-w-5xl px-5 py-14 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+
+            {/* Left */}
+            <div className="flex-1 min-w-0">
+              {/* Open-to-work badge */}
+              <span className="mb-6 inline-flex items-center gap-2 border-3 border-foreground bg-[#72ef36] px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[2px_2px_0px_0px_#000]">
+                <span className="h-1.5 w-1.5 rounded-full bg-black" />
+                Open to opportunities
+              </span>
+
+              {/* Name */}
+              <h1 className="text-[clamp(3rem,10vw,5.5rem)] font-black leading-[0.92] tracking-tighter uppercase mt-4 mb-6">
+                Shubham
+                <br />
+                <span className="relative inline-block">
+                  Rawat
+                  <span
+                    className="absolute -bottom-1 left-0 h-[6px] w-full bg-[#ff90e8]"
+                    aria-hidden
+                  />
+                </span>
+              </h1>
+
+              {/* Title + location */}
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="border-3 border-foreground bg-[#ff90e8] px-4 py-1.5 text-sm font-black uppercase tracking-wide shadow-[2px_2px_0px_0px_#000]">
+                  Software Engineer
+                </span>
+                <span className="flex items-center gap-1.5 text-muted-foreground font-semibold text-sm">
+                  <MapPin size={14} className="shrink-0" />
+                  {user.location}
+                </span>
+              </div>
+
+              {/* Stack line */}
+              <p className="text-muted-foreground font-medium text-sm mb-10">
+                React · TypeScript · AWS · Java Spring Boot · 3.5 Years in Fintech
+              </p>
+
+              {/* Impact stats */}
+              <div className="grid grid-cols-3 gap-3 max-w-xs mb-10">
+                {STATS.map(({ value, label, bg }) => (
+                  <div
+                    key={label}
+                    className={`${bg} border-3 border-foreground p-3 shadow-[3px_3px_0px_0px_#000]`}
+                  >
+                    <p className="text-xl font-black leading-none mb-1">
+                      {value}
+                    </p>
+                    <p className="text-[11px] font-semibold leading-tight">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={user.resumePath}
+                  download
+                  className="nb-btn-primary px-5 py-2.5 text-sm"
+                >
+                  <Download size={15} />
+                  Download Resume
+                </a>
+                <Link
+                  href={user.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nb-btn-secondary px-5 py-2.5 text-sm"
+                >
+                  <Github size={15} />
+                  GitHub
+                  <ArrowUpRight size={14} />
+                </Link>
+                <Link
+                  href={user.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nb-btn-secondary px-5 py-2.5 text-sm"
+                >
+                  LinkedIn
+                  <ArrowUpRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — profile + contact */}
+            <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
+              <div
+                className="border-3 border-foreground shadow-[5px_5px_0px_0px_#000] overflow-hidden"
+              >
+                <Image
+                  src={profileImage}
+                  alt="Shubham Rawat"
+                  width={210}
+                  height={210}
+                  className="object-cover block"
+                  priority
+                />
+              </div>
+              <a
+                href={`mailto:${user.email}`}
+                className="nb-btn-secondary px-4 py-2 text-xs"
+              >
+                <Mail size={13} />
+                {user.email}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <SectionDivider />
-      <div className="screen-line-before">
-        <div className={`mx-auto h-full max-w-3xl border-x p-5`}>
-          {user.about?.map(({ icon, title }: any, index) => (
-            <IconDescription key={index} icon={icon} title={title} />
-          ))}
-        </div>
-      </div>
-      <SectionDivider />
-      <LinksSection />
-      <SectionDivider lineBefore={false} />
-      <AboutMe />
-      <SectionDivider />
-      <ContributionSection />
-      <SectionDivider />
+      </section>
+
+      <AboutSection />
       <StackSection />
-      <SectionDivider />
       <ExperienceSection />
-      <SectionDivider />
-    </div>
+      <ContributionSection />
+      <LinksSection />
+    </main>
   );
 }

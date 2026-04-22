@@ -1,29 +1,31 @@
 "use client";
+
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 import { MoonStar, Sun } from "lucide-react";
-import soundManager from "@/lib/SoundManger";
 
 const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => setMounted(true), []);
 
-  const switchTheme = () => {
-    soundManager.playClick();
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
   return (
-    <Button
-      variant={"outline"}
-      size={"icon"}
-      asChild
-      className="cursor-pointer rounded-full"
-      onClick={switchTheme}
+    <button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="nb-btn-secondary p-1.5 cursor-pointer"
+      aria-label="Toggle theme"
     >
-      <a>{mounted ? theme === "dark" ? <MoonStar /> : <Sun /> : null}</a>
-    </Button>
+      {mounted ? (
+        theme === "dark" ? (
+          <MoonStar size={18} />
+        ) : (
+          <Sun size={18} />
+        )
+      ) : (
+        <span className="size-[18px] block" />
+      )}
+    </button>
   );
 };
 

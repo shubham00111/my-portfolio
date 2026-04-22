@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { LoaderIcon } from "lucide-react";
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -15,87 +15,95 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "./kibo-ui/contribution-graph";
-import { eachDayOfInterval, endOfYear, formatISO, startOfYear } from "date-fns";
-import SectionContainer from "./section/SectionContainer";
 import { Spinner } from "./ui/spinner";
-import SectionContent from "./section/SectionContent";
+
+const GITHUB_USERNAME = "shubham00111";
 
 const ContributionSection = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const githubData = await fetch(
-        `https://github-contributions-api.jogruber.de/v4/${"shubham00111"}?y=last`,
+      const res = await fetch(
+        `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`,
       );
-      const response = await githubData.json();
-      setData(response.contributions);
+      const json = await res.json();
+      setData(json.contributions);
     })();
   }, []);
 
   return (
-    <SectionContainer>
-      <SectionContent className="screen-line-before px-3 py-2">
-        {data.length > 0 ? (
-          <TooltipProvider>
-            <ContributionGraph
-              data={data}
-              blockMargin={3}
-              blockSize={11}
-              fontSize={14}
-              blockRadius={0}
-            >
-              <ContributionGraphCalendar
-                className="no-scrollbar pt-2"
-                title="Github Contributions"
+    <section id="contributions" className="border-b-3 border-foreground">
+      <div className="mx-auto max-w-5xl px-5 py-16">
+        <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+          04
+        </p>
+        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+          Contributions
+        </h2>
+
+        <div className="nb-card p-5 overflow-x-auto">
+          {data.length > 0 ? (
+            <TooltipProvider>
+              <ContributionGraph
+                data={data}
+                blockMargin={3}
+                blockSize={11}
+                fontSize={13}
+                blockRadius={0}
               >
-                {({ activity, dayIndex, weekIndex }) => (
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <g>
-                        <ContributionGraphBlock
-                          activity={activity}
-                          dayIndex={dayIndex}
-                          weekIndex={weekIndex}
-                        />
-                      </g>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p className="font-semibold">{activity.date}</p>
-                      <p>{activity.count} contributions</p>
-                    </TooltipContent>
-                  </Tooltip>
-                )}
-              </ContributionGraphCalendar>
-              <ContributionGraphFooter>
-                <ContributionGraphTotalCount>
-                  {({ totalCount, year }) => (
-                    <div className="text-muted-foreground">
-                      {totalCount.toLocaleString("en")} contributions in {year}{" "}
-                      on{" "}
-                      <a
-                        className="font-medium underline underline-offset-4"
-                        href={`https://github.com/${"shubham00111"}`}
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        GitHub
-                      </a>
-                      .
-                    </div>
+                <ContributionGraphCalendar
+                  className="no-scrollbar pt-1"
+                  title="GitHub Contributions"
+                >
+                  {({ activity, dayIndex, weekIndex }) => (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <g>
+                          <ContributionGraphBlock
+                            activity={activity}
+                            dayIndex={dayIndex}
+                            weekIndex={weekIndex}
+                          />
+                        </g>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="font-semibold">{activity.date}</p>
+                        <p>{activity.count} contributions</p>
+                      </TooltipContent>
+                    </Tooltip>
                   )}
-                </ContributionGraphTotalCount>
-                <ContributionGraphLegend />
-              </ContributionGraphFooter>
-            </ContributionGraph>
-          </TooltipProvider>
-        ) : (
-          <div className="size- flex h-30 items-center justify-center">
-            <Spinner className="size-8" />
-          </div>
-        )}
-      </SectionContent>
-    </SectionContainer>
+                </ContributionGraphCalendar>
+                <ContributionGraphFooter>
+                  <ContributionGraphTotalCount>
+                    {({ totalCount, year }) => (
+                      <p className="text-sm text-muted-foreground">
+                        {totalCount.toLocaleString("en")} contributions in{" "}
+                        {year} on{" "}
+                        <a
+                          href={`https://github.com/${GITHUB_USERNAME}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold underline underline-offset-2"
+                        >
+                          GitHub
+                        </a>
+                        .
+                      </p>
+                    )}
+                  </ContributionGraphTotalCount>
+                  <ContributionGraphLegend />
+                </ContributionGraphFooter>
+              </ContributionGraph>
+            </TooltipProvider>
+          ) : (
+            <div className="flex h-32 items-center justify-center">
+              <Spinner className="size-8" />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

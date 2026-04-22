@@ -1,40 +1,25 @@
-"use client";
-import React from "react";
-import SectionDivider from "./SectionDivider";
-import SectionContainer from "./section/SectionContainer";
-import SectionContent from "./section/SectionContent";
-import BrandImage from "./BrandImage";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { user } from "@/app/data/user";
 
 const Footer = () => {
   return (
-    <div className="px-2">
-      <div className="pattern-bg border-x-[var(--border) mx-auto max-w-3xl border-x-1 px-2 [--pattern-foreground:var(--color-edge)]/56">
-        <div className="mx-auto w-20 px-2 md:w-50">
-          <BrandImage />
+    <footer className="border-t-3 border-foreground">
+      <div className="mx-auto max-w-5xl px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="font-black text-2xl tracking-tighter select-none">
+          S<span className="text-[#ff90e8]">R</span>
         </div>
+
+        <p className="text-sm text-muted-foreground font-medium text-center">
+          © 2025 Shubham Rawat · Built with Next.js & React
+        </p>
+
+        <a
+          href={`mailto:${user.email}`}
+          className="nb-btn-primary px-4 py-2 text-sm"
+        >
+          Get in touch →
+        </a>
       </div>
-      <SectionDivider />
-      <SectionContainer className="screen-line-before screen-line-after">
-        <SectionContent className="text-muted-foreground text-md flex items-center justify-center gap-2">
-          <p>Inspired by</p>
-          <Link
-            href="https://chanhdai.com/"
-            className={cn("hover:underline", "underline-offset-3")}
-          >
-            {"ncdai"}
-          </Link>
-          <p>&</p>
-          <Link
-            href="https://ui.shadcn.com/"
-            className={cn("line-heig underline-offset-3 hover:underline")}
-          >
-            {"ui.shadcn.com"}
-          </Link>
-        </SectionContent>
-      </SectionContainer>
-    </div>
+    </footer>
   );
 };
 
