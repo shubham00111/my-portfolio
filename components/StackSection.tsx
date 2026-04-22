@@ -13,7 +13,7 @@ function SkillIcon({ label, icon, fallback }: Skill) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <div className="size-14 bg-white dark:bg-zinc-800 border-2 border-foreground shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)] flex items-center justify-center cursor-default transition-all duration-100 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+        <div className="size-14 bg-[#faf7f0] dark:bg-zinc-800 border-2 border-foreground shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)] flex items-center justify-center cursor-default transition-all duration-100 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
           {icon ? (
             <Icon icon={icon} width={36} height={36} />
           ) : (

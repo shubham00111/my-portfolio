@@ -7,7 +7,7 @@ export const user = {
   website: "shubhamrawat.dev",
   github: "https://github.com/shubham00111",
   linkedin: "https://www.linkedin.com/in/shubhamrawatdev/",
-  resumePath: "/Shubham_Rawat.pdf",
+  resumePath: "/Shubham_Rawat_Resume.pdf",
   bio: "Frontend Engineer with 3.5 years of experience building fintech products at TSYS. Specialized in React/TypeScript and cloud architecture. Reduced infrastructure costs by 80% through AWS migration and accelerated team delivery by 60% with reusable component systems. Strong focus on performance, scalability, and developer experience.",
   stats: [
     { value: "80%", label: "Infra Cost Reduction" },
