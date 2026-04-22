@@ -23,7 +23,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "/social_icons/x.webp",
     title: "X (Formerly Twitter)",
     description: "@Shubham04441343",
-    href: "https://x.com/Shubham04441343",
+    href: "https://x.com/shubhamfrontend",
   },
   {
     icon: "/social_icons/leetcode.png",
