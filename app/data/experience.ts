@@ -5,6 +5,7 @@ export interface Position {
   company: string;
   companyUrl?: string;
   logo?: string;
+  acquisitionNote?: { text: string; logo: string };
   period: string;
   employmentType?: string;
   location?: string;
@@ -21,9 +22,13 @@ export const EXPERIENCES: Position[] = [
     id: "tsys-se",
     type: "work",
     title: "Software Engineer",
-    company: "TSYS – Global Payments (Acquired by FIS Global, 2026)",
+    company: "TSYS – Global Payments",
     companyUrl: "https://www.tsys.com/",
     logo: "/experience/tsys.jpg",
+    acquisitionNote: {
+      text: "Acquired by FIS Global, 2026",
+      logo: "/experience/fis.png",
+    },
     period: "Jul 2025 – Present",
     employmentType: "Full-time",
     location: "Noida, India",
@@ -86,7 +91,8 @@ export const EXPERIENCES: Position[] = [
       "Figma",
       "Git",
     ],
-    award: "Bravo Award for exceptional dedication and taking on additional project responsibilities beyond core assignments.",
+    award:
+      "Bravo Award for exceptional dedication and taking on additional project responsibilities beyond core assignments.",
   },
   {
     id: "amity",

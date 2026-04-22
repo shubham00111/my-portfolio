@@ -52,11 +52,11 @@ const AboutSection = () => {
             ))}
 
             {/* Status badge */}
-            <div className="border-3 border-foreground bg-[#72ef36] p-3 shadow-[3px_3px_0px_0px_#000]">
-              <p className="text-[10px] font-black uppercase tracking-widest mb-0.5">
+            <div className="border-3 border-foreground bg-[#72ef36] dark:bg-[#52b825] p-3 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_rgba(240,240,240,0.6)]">
+              <p className="text-[10px] font-black uppercase tracking-widest mb-0.5 text-black">
                 Status
               </p>
-              <p className="font-black text-sm flex items-center gap-2">
+              <p className="font-black text-sm flex items-center gap-2 text-black">
                 <span className="h-2 w-2 rounded-full bg-black animate-pulse shrink-0" />
                 Open to opportunities
               </p>

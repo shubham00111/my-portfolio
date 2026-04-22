@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CARD_ACCENTS = [
-  "hover:bg-[#ff90e8]",
-  "hover:bg-[#ffde59]",
-  "hover:bg-[#72ef36]",
-  "hover:bg-[#99c7fb]",
+  "hover:bg-[#ff90e8] dark:hover:bg-[#c96ab8]",
+  "hover:bg-[#ffde59] dark:hover:bg-[#c9a830]",
+  "hover:bg-[#72ef36] dark:hover:bg-[#52b825]",
+  "hover:bg-[#99c7fb] dark:hover:bg-[#5898d8]",
 ];
 
 const LinksSection = () => {
@@ -28,7 +28,7 @@ const LinksSection = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`nb-card-hover p-4 group flex items-center gap-4 bg-card ${CARD_ACCENTS[index % CARD_ACCENTS.length]}`}
+              className={`nb-card-hover p-4 group flex items-center gap-4 bg-card dark:hover:text-black dark:hover:[&_p]:text-black ${CARD_ACCENTS[index % CARD_ACCENTS.length]}`}
             >
               <div className="size-11 shrink-0 border-3 border-foreground overflow-hidden bg-muted flex items-center justify-center">
                 <Image
