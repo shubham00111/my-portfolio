@@ -4,12 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
+  --background: #f1ede1;
   --foreground: #000000;
   --card: #ffffff;
   --card-foreground: #000000;
-  --muted: #f4f4f0;
-  --muted-foreground: #555555;
+  --muted: #e5dfd0;
+  --muted-foreground: #60584a;
   --border: #000000;
 
   /* Gumroad-style multi-color palette */

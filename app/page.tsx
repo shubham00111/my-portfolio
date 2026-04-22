@@ -7,6 +7,7 @@ import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContributionSection from "@/components/ContributionSection";
 import LinksSection from "@/components/LinksSection";
+import FloatingShapes from "@/components/FloatingShapes";
 import { user } from "./data/user";
 
 const STATS = [
@@ -31,8 +32,13 @@ export default function Portfolio() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="border-b-3 border-foreground">
-        <div className="mx-auto max-w-5xl px-5 py-14 md:py-20">
+      <section className="border-b-3 border-foreground relative overflow-hidden">
+        {/* Floating decorative shapes — hidden on mobile to avoid clutter */}
+        <div className="hidden md:block">
+          <FloatingShapes />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-5xl px-5 py-14 md:py-20">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
 
             {/* Left */}
