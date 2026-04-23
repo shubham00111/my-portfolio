@@ -36,7 +36,7 @@ const ContributionSection = () => {
     <section id="contributions" className="border-b-3 border-foreground">
       <div className="mx-auto max-w-5xl px-5 py-16">
         <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
-          04
+          05
         </p>
         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
           Contributions

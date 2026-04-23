@@ -58,7 +58,7 @@ const AboutSection = () => {
               </p>
               <p className="font-black text-sm flex items-center gap-2 text-black">
                 <span className="h-2 w-2 rounded-full bg-black animate-pulse shrink-0" />
-                Open to opportunities
+                Open to SDE-2 / Senior Frontend — remote or hybrid (Noida · Gurgaon · Bengaluru)
               </p>
             </div>
           </div>

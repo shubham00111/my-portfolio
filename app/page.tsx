@@ -5,6 +5,7 @@ import profileImage from "@/app/assets/profile_pic.png";
 import AboutSection from "@/components/AboutSection";
 import StackSection from "@/components/StackSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import ContributionSection from "@/components/ContributionSection";
 import LinksSection from "@/components/LinksSection";
 import FloatingShapes from "@/components/FloatingShapes";
@@ -14,16 +15,19 @@ const STATS = [
   {
     value: "80%",
     label: "Infra Cost Reduction",
+    subtitle: "AWS migration",
     bg: "bg-[#ff90e8] dark:bg-[#c96ab8]",
   },
   {
     value: "60%",
     label: "Faster Delivery",
+    subtitle: "Figma-to-Code POC",
     bg: "bg-[#ffde59] dark:bg-[#c9a830]",
   },
   {
     value: "90%",
     label: "Security Vulns Fixed",
+    subtitle: "Remediation sprint",
     bg: "bg-[#72ef36] dark:bg-[#52b825]",
   },
 ];
@@ -45,8 +49,8 @@ export default function Portfolio() {
             <div className="flex-1 min-w-0">
               {/* Open-to-work badge */}
               <span className="mb-6 inline-flex items-center gap-2 border-3 border-foreground bg-[#72ef36] dark:bg-[#52b825] px-3 py-1 text-xs font-black uppercase tracking-wide text-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)]">
-                <span className="h-1.5 w-1.5 rounded-full bg-black" />
-                Open to opportunities
+                <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse" />
+                Open to SDE-2 / Senior Frontend roles
               </span>
 
               {/* Name */}
@@ -80,10 +84,11 @@ export default function Portfolio() {
 
               {/* Impact stats */}
               <div className="grid grid-cols-3 gap-3 max-w-xs mb-10">
-                {STATS.map(({ value, label, bg }) => (
-                  <div
+                {STATS.map(({ value, label, subtitle, bg }) => (
+                  <a
                     key={label}
-                    className={`${bg} border-3 border-foreground p-3 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_rgba(240,240,240,0.6)]`}
+                    href="#experience"
+                    className={`${bg} border-3 border-foreground p-3 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_rgba(240,240,240,0.6)] block hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100`}
                   >
                     <p className="text-xl font-black leading-none mb-1 text-black">
                       {value}
@@ -91,7 +96,10 @@ export default function Portfolio() {
                     <p className="text-[11px] font-semibold leading-tight text-black">
                       {label}
                     </p>
-                  </div>
+                    <p className="text-[10px] font-medium leading-tight text-black/60 mt-0.5">
+                      {subtitle}
+                    </p>
+                  </a>
                 ))}
               </div>
 
@@ -125,6 +133,11 @@ export default function Portfolio() {
                   <ArrowUpRight size={14} />
                 </Link>
               </div>
+
+              {/* Now strip */}
+              <p className="text-xs text-muted-foreground font-medium mt-5 border-l-[3px] border-[#ff90e8] dark:border-[#c96ab8] pl-3">
+                Currently: exploring AI agent frameworks · building with AWS Bedrock · reading DDIA
+              </p>
             </div>
 
             {/* Right — profile + contact */}
@@ -156,6 +169,7 @@ export default function Portfolio() {
       <AboutSection />
       <StackSection />
       <ExperienceSection />
+      <ProjectsSection />
       <ContributionSection />
       <LinksSection />
     </main>
