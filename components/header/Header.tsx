@@ -8,12 +8,12 @@ import ThemeButton from "../ThemeButton";
 import { user } from "@/app/data/user";
 
 const NAV_LINKS = [
-  { label: "About",      href: "#about",      hoverBg: "hover:bg-[#ff90e8] dark:hover:bg-[#c96ab8] hover:text-black" },
-  { label: "Skills",     href: "#skills",     hoverBg: "hover:bg-[#ffde59] dark:hover:bg-[#c9a830] hover:text-black" },
-  { label: "Experience", href: "#experience", hoverBg: "hover:bg-[#72ef36] dark:hover:bg-[#52b825] hover:text-black" },
-  { label: "Projects",   href: "#projects",   hoverBg: "hover:bg-[#ffc59b] dark:hover:bg-[#c88050] hover:text-black" },
-  { label: "Blog",       href: "/blog",       hoverBg: "hover:bg-[#c9b1ff] dark:hover:bg-[#9070d0] hover:text-black" },
-  { label: "Connect",    href: "#connect",    hoverBg: "hover:bg-[#99c7fb] dark:hover:bg-[#5898d8] hover:text-black" },
+  { label: "About",      href: "/#about",      hoverBg: "hover:bg-[#ff90e8] dark:hover:bg-[#c96ab8] hover:text-black" },
+  { label: "Skills",     href: "/#skills",     hoverBg: "hover:bg-[#ffde59] dark:hover:bg-[#c9a830] hover:text-black" },
+  { label: "Experience", href: "/#experience", hoverBg: "hover:bg-[#72ef36] dark:hover:bg-[#52b825] hover:text-black" },
+  { label: "Projects",   href: "/#projects",   hoverBg: "hover:bg-[#ffc59b] dark:hover:bg-[#c88050] hover:text-black" },
+  { label: "Blog",       href: "/blog",        hoverBg: "hover:bg-[#c9b1ff] dark:hover:bg-[#9070d0] hover:text-black" },
+  { label: "Connect",    href: "/#connect",    hoverBg: "hover:bg-[#99c7fb] dark:hover:bg-[#5898d8] hover:text-black" },
 ];
 
 const Header = () => {
