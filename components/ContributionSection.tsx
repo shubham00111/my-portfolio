@@ -47,9 +47,9 @@ const ContributionSection = () => {
             <TooltipProvider>
               <ContributionGraph
                 data={data}
-                blockMargin={3}
-                blockSize={11}
-                fontSize={13}
+                blockMargin={2}
+                blockSize={12}
+                fontSize={12}
                 blockRadius={0}
               >
                 <ContributionGraphCalendar
@@ -61,6 +61,7 @@ const ContributionSection = () => {
                       <TooltipTrigger asChild>
                         <g>
                           <ContributionGraphBlock
+                            className="stroke-foreground/10 stroke-[0.5px]"
                             activity={activity}
                             dayIndex={dayIndex}
                             weekIndex={weekIndex}
