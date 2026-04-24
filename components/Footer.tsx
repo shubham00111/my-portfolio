@@ -2,14 +2,14 @@ import { user } from "@/app/data/user";
 
 const Footer = () => {
   return (
-    <footer className="border-t-3 border-foreground">
-      <div className="mx-auto max-w-5xl px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="font-black text-2xl tracking-tighter select-none">
+    <footer className="border-foreground border-t-3">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
+        <div className="text-2xl font-black tracking-tighter select-none">
           S<span className="text-[#ff90e8]">R</span>
         </div>
 
-        <p className="text-sm text-muted-foreground font-medium text-center">
-          © 2025 Shubham Rawat · Built with Next.js & React
+        <p className="text-muted-foreground text-center text-sm font-medium">
+          © 2026 Shubham Rawat · Built with Next.js & React
         </p>
 
         <a
