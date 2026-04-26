@@ -40,14 +40,17 @@ export const PROJECTS: Project[] = [
     color: "bg-[#99c7fb] dark:bg-[#5898d8]",
   },
   {
-    id: "coming-soon",
-    title: "Side Project",
-    tagline: "Personal project in progress",
-    problem: "",
-    approach: "",
-    outcome: "",
-    tech: [],
-    isPlaceholder: true,
+    id: "component-library",
+    title: "Multi-Style Component Library",
+    tagline: "shadcn · Neobrutalism · Flowbite — one library",
+    problem:
+      "Developers bouncing between design systems waste time context-switching — each library has its own syntax, docs, and copy-paste flow, making it painful to prototype with different visual styles.",
+    approach:
+      "Built a component library where the same UI primitives are rendered in multiple design languages (shadcn, neobrutalism, Flowbite). Each variant ships as plain HTML + CSS you can copy and drop into any project — no framework lock-in.",
+    outcome:
+      "A live, browsable library that lets you grab a component in your preferred visual style and paste it directly — no installs, no config, no design system opinions forced on you.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    demo: "https://component-library-sandy.vercel.app/",
     color: "bg-[#c9b1ff] dark:bg-[#9070d0]",
   },
 ];
