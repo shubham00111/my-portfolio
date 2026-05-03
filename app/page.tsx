@@ -8,7 +8,6 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContributionSection from "@/components/ContributionSection";
 import LinksSection from "@/components/LinksSection";
-import FloatingShapes from "@/components/FloatingShapes";
 import { user } from "./data/user";
 
 const STATS = [
@@ -16,19 +15,16 @@ const STATS = [
     value: "80%",
     label: "Infra Cost Reduction",
     subtitle: "AWS migration",
-    bg: "bg-[#ff90e8] dark:bg-[#c96ab8]",
   },
   {
     value: "60%",
     label: "Faster Delivery",
     subtitle: "Figma-to-Code POC",
-    bg: "bg-[#ffde59] dark:bg-[#c9a830]",
   },
   {
     value: "90%",
     label: "Security Vulns Fixed",
     subtitle: "Remediation sprint",
-    bg: "bg-[#72ef36] dark:bg-[#52b825]",
   },
 ];
 
@@ -36,67 +32,57 @@ export default function Portfolio() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="border-b-3 border-foreground relative overflow-hidden">
-        {/* Floating decorative shapes — hidden on mobile to avoid clutter */}
-        <div className="hidden md:block">
-          <FloatingShapes />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-5xl px-5 py-14 md:py-20">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
 
             {/* Left */}
             <div className="flex-1 min-w-0">
               {/* Open-to-work badge */}
-              <span className="mb-6 inline-flex items-center gap-2 border-3 border-foreground bg-[#72ef36] dark:bg-[#52b825] px-3 py-1 text-xs font-black uppercase tracking-wide text-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)]">
-                <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse" />
+              <span className="mb-6 inline-flex items-center gap-2 border border-border bg-muted px-3 py-1 text-xs font-medium rounded-full text-muted-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse shrink-0" />
                 Open to SDE-2 / Senior Frontend roles
               </span>
 
               {/* Name */}
-              <h1 className="text-[clamp(3rem,10vw,5.5rem)] font-black leading-[0.92] tracking-tighter uppercase mt-4 mb-6">
+              <h1 className="text-[clamp(2.75rem,9vw,5rem)] font-bold leading-[0.95] tracking-tight mt-4 mb-5">
                 Shubham
                 <br />
-                <span className="relative inline-block">
-                  Rawat
-                  <span
-                    className="absolute -bottom-1 left-0 h-[6px] w-full bg-[#ff90e8] dark:bg-[#c96ab8]"
-                    aria-hidden
-                  />
-                </span>
+                <span className="text-muted-foreground">Rawat</span>
               </h1>
 
               {/* Title + location */}
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="border-3 border-foreground bg-[#ff90e8] dark:bg-[#c96ab8] px-4 py-1.5 text-sm font-black uppercase tracking-wide text-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)]">
+              <div className="flex flex-wrap items-center gap-2.5 mb-4">
+                <span className="text-sm font-medium text-foreground">
                   Software Engineer
                 </span>
-                <span className="flex items-center gap-1.5 text-muted-foreground font-semibold text-sm">
-                  <MapPin size={14} className="shrink-0" />
+                <span className="h-1 w-1 rounded-full bg-border" />
+                <span className="flex items-center gap-1 text-muted-foreground text-sm">
+                  <MapPin size={13} className="shrink-0" />
                   {user.location}
                 </span>
               </div>
 
               {/* Stack line */}
-              <p className="text-muted-foreground font-medium text-sm mb-10">
+              <p className="text-muted-foreground text-sm mb-10">
                 React · TypeScript · AWS · Java Spring Boot · 3.5 Years in Fintech
               </p>
 
               {/* Impact stats */}
-              <div className="grid grid-cols-3 gap-3 max-w-xs mb-10">
-                {STATS.map(({ value, label, subtitle, bg }) => (
+              <div className="flex flex-wrap gap-4 mb-10">
+                {STATS.map(({ value, label, subtitle }) => (
                   <a
                     key={label}
                     href="#experience"
-                    className={`${bg} border-3 border-foreground p-3 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_rgba(240,240,240,0.6)] block hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100`}
+                    className="group flex flex-col gap-0.5 px-4 py-3 rounded-xl border border-border bg-card hover:bg-muted transition-colors duration-150 min-w-[96px]"
                   >
-                    <p className="text-xl font-black leading-none mb-1 text-black">
+                    <p className="text-2xl font-bold leading-none text-foreground">
                       {value}
                     </p>
-                    <p className="text-[11px] font-semibold leading-tight text-black">
+                    <p className="text-xs font-medium leading-tight text-foreground/80 mt-1">
                       {label}
                     </p>
-                    <p className="text-[10px] font-medium leading-tight text-black/60 mt-0.5">
+                    <p className="text-[11px] leading-tight text-muted-foreground">
                       {subtitle}
                     </p>
                   </a>
@@ -135,21 +121,19 @@ export default function Portfolio() {
               </div>
 
               {/* Now strip */}
-              <p className="text-xs text-muted-foreground font-medium mt-5 border-l-[3px] border-[#ff90e8] dark:border-[#c96ab8] pl-3">
+              <p className="text-xs text-muted-foreground font-medium mt-6 border-l-2 border-border pl-3">
                 Currently: exploring AI agent frameworks · building with AWS Bedrock · reading DDIA
               </p>
             </div>
 
             {/* Right — profile + contact */}
             <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
-              <div
-                className="border-3 border-foreground shadow-[5px_5px_0px_0px_#000] dark:shadow-[5px_5px_0px_0px_rgba(240,240,240,0.6)] overflow-hidden"
-              >
+              <div className="rounded-2xl border border-border overflow-hidden shadow-sm">
                 <Image
                   src={profileImage}
                   alt="Shubham Rawat"
-                  width={210}
-                  height={210}
+                  width={200}
+                  height={200}
                   className="object-cover block"
                   priority
                 />

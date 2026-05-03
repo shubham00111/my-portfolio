@@ -13,11 +13,11 @@ function SkillIcon({ label, icon, fallback }: Skill) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <div className="size-14 bg-[#faf7f0] dark:bg-zinc-800 border-2 border-foreground shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)] flex items-center justify-center cursor-default transition-all duration-100 hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+        <div className="size-12 bg-card border border-border rounded-lg flex items-center justify-center cursor-default transition-colors duration-150 hover:bg-muted">
           {icon ? (
-            <Icon icon={icon} width={36} height={36} />
+            <Icon icon={icon} width={28} height={28} />
           ) : (
-            <span className="text-[11px] font-black text-center leading-tight px-1 text-foreground">
+            <span className="text-[10px] font-medium text-center leading-tight px-1 text-muted-foreground">
               {fallback ?? label.slice(0, 4).toUpperCase()}
             </span>
           )}
@@ -25,7 +25,7 @@ function SkillIcon({ label, icon, fallback }: Skill) {
       </TooltipTrigger>
       <TooltipContent
         side="top"
-        className="border-2 border-foreground bg-foreground text-background font-bold text-xs px-2 py-1 rounded-none shadow-none"
+        className="text-xs font-medium"
       >
         {label}
       </TooltipContent>
@@ -42,12 +42,12 @@ const TIERS: { key: SkillTier; label: string }[] = [
 const StackSection = () => {
   return (
     <TooltipProvider delayDuration={100}>
-      <section id="skills" className="border-b-3 border-foreground">
+      <section id="skills" className="border-b border-border">
         <div className="mx-auto max-w-5xl px-5 py-16">
-          <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
             02
           </p>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
             Skills
           </h2>
 
@@ -58,23 +58,21 @@ const StackSection = () => {
                 <div key={key}>
                   {/* Tier heading */}
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="text-xs font-black uppercase tracking-widest text-muted-foreground whitespace-nowrap">
+                    <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground whitespace-nowrap">
                       {tierLabel}
                     </span>
-                    <div className="flex-1 h-px bg-foreground/20" />
+                    <div className="flex-1 h-px bg-border" />
                   </div>
 
                   <div className="space-y-4">
-                    {categories.map(({ label, color, skills }) => (
+                    {categories.map(({ label, skills }) => (
                       <div key={label} className="grid sm:grid-cols-4 gap-4 items-start">
                         <div className="sm:col-span-1">
-                          <span
-                            className={`${color} border-3 border-foreground px-3 py-1.5 text-xs font-black uppercase tracking-wide shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)] text-black dark:text-black inline-block`}
-                          >
+                          <span className="border border-border bg-muted px-3 py-1.5 text-xs font-medium rounded-md text-muted-foreground inline-block">
                             {label}
                           </span>
                         </div>
-                        <div className="sm:col-span-3 flex flex-wrap gap-3">
+                        <div className="sm:col-span-3 flex flex-wrap gap-2.5">
                           {skills.map((skill) => (
                             <SkillIcon key={skill.label} {...skill} />
                           ))}

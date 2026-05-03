@@ -3,50 +3,43 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const CARD_ACCENTS = [
-  "hover:bg-[#ff90e8] dark:hover:bg-[#c96ab8]",
-  "hover:bg-[#ffde59] dark:hover:bg-[#c9a830]",
-  "hover:bg-[#72ef36] dark:hover:bg-[#52b825]",
-  "hover:bg-[#99c7fb] dark:hover:bg-[#5898d8]",
-];
-
 const LinksSection = () => {
   return (
-    <section id="connect" className="border-b-3 border-foreground">
+    <section id="connect" className="border-b border-border">
       <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
           06
         </p>
-        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
           Connect
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {SOCIAL_LINKS.map(({ icon, title, description, href }, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {SOCIAL_LINKS.map(({ icon, title, description, href }) => (
             <Link
               key={title}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`nb-card-hover p-4 group flex items-center gap-4 bg-card dark:hover:text-black dark:hover:[&_p]:text-black ${CARD_ACCENTS[index % CARD_ACCENTS.length]}`}
+              className="nb-card-hover p-4 flex items-center gap-4"
             >
-              <div className="size-11 shrink-0 border-3 border-foreground overflow-hidden bg-muted flex items-center justify-center">
+              <div className="size-10 shrink-0 rounded-lg border border-border overflow-hidden bg-muted flex items-center justify-center">
                 <Image
                   src={icon}
                   alt={title}
-                  width={32}
-                  height={32}
+                  width={28}
+                  height={28}
                   className="object-contain"
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-black text-sm">{title}</p>
+                <p className="font-medium text-sm">{title}</p>
                 <p className="text-muted-foreground text-xs truncate">
                   {description}
                 </p>
               </div>
               <ArrowUpRight
-                size={18}
+                size={16}
                 className="shrink-0 text-muted-foreground"
               />
             </Link>

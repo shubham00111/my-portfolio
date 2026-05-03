@@ -37,12 +37,12 @@ const ContributionSection = () => {
   const totalCount = data.reduce((sum, d) => sum + d.count, 0);
 
   return (
-    <section id="contributions" className="border-b-3 border-foreground">
+    <section id="contributions" className="border-b border-border">
       <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
           05
         </p>
-        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
           Contributions
         </h2>
 
@@ -56,7 +56,7 @@ const ContributionSection = () => {
                   blockMargin={2}
                   blockSize={12}
                   fontSize={12}
-                  blockRadius={0}
+                  blockRadius={2}
                 >
                   <ContributionGraphCalendar
                     className="no-scrollbar pt-1 [&_svg]:w-full [&_svg]:h-auto"
@@ -67,7 +67,7 @@ const ContributionSection = () => {
                         <TooltipTrigger asChild>
                           <g>
                             <ContributionGraphBlock
-                              className="stroke-foreground/10 stroke-[0.5px]"
+                              className="stroke-border stroke-[0.5px]"
                               activity={activity}
                               dayIndex={dayIndex}
                               weekIndex={weekIndex}
@@ -75,8 +75,8 @@ const ContributionSection = () => {
                           </g>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p className="font-semibold">{activity.date}</p>
-                          <p>{activity.count} contributions</p>
+                          <p className="font-medium">{activity.date}</p>
+                          <p className="text-muted-foreground">{activity.count} contributions</p>
                         </TooltipContent>
                       </Tooltip>
                     )}
@@ -90,7 +90,7 @@ const ContributionSection = () => {
                             href={`https://github.com/${GITHUB_USERNAME}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-bold underline underline-offset-2"
+                            className="font-medium underline underline-offset-2"
                           >
                             GitHub
                           </a>
@@ -110,23 +110,23 @@ const ContributionSection = () => {
           </div>
 
           {/* Context panel */}
-          <div className="border-t-3 md:border-t-0 md:border-l-3 border-foreground w-full md:w-52 shrink-0 p-5 flex flex-col gap-5 bg-[#faf7f0] dark:bg-zinc-900">
+          <div className="border-t md:border-t-0 md:border-l border-border w-full md:w-52 shrink-0 p-5 flex flex-col gap-5 bg-muted/50 rounded-b-xl md:rounded-b-none md:rounded-r-xl">
             {/* Total count callout */}
             <div>
-              <p className="text-5xl font-black leading-none text-foreground">
+              <p className="text-4xl font-bold leading-none text-foreground">
                 {data.length > 0 ? totalCount : "—"}
               </p>
-              <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mt-1">
+              <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mt-1">
                 Public contributions
               </p>
             </div>
 
-            <div className="h-px bg-foreground/15" />
+            <div className="h-px bg-border" />
 
             {/* Context note */}
             <p className="text-xs text-muted-foreground leading-relaxed">
               Most day-to-day work lives in{" "}
-              <span className="font-bold text-foreground">private TSYS repos</span>
+              <span className="font-medium text-foreground">private TSYS repos</span>
               . This graph reflects personal and open-source activity only.
             </p>
 
