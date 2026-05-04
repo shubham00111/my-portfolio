@@ -4,18 +4,20 @@ import Link from "next/link";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="border-b border-border">
-      <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+    <section id="projects">
+      <div className="screen-line-bottom px-5 py-6">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
           04
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
           Projects
         </h2>
-        <p className="text-muted-foreground text-sm mb-10">
+        <p className="text-muted-foreground text-sm mt-1">
           Selected work — case studies from TSYS and personal builds
         </p>
+      </div>
 
+      <div className="px-5 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {PROJECTS.map(({ id, title, tagline, problem, approach, outcome, tech, github, demo, isPlaceholder }) => (
             <div key={id} className="nb-card flex flex-col">

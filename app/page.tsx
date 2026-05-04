@@ -8,6 +8,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContributionSection from "@/components/ContributionSection";
 import LinksSection from "@/components/LinksSection";
+import GutterSeparator from "@/components/GutterSeparator";
 import { user } from "./data/user";
 
 const STATS = [
@@ -32,8 +33,8 @@ export default function Portfolio() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24">
+      <section className="screen-line-top">
+        <div className="px-5 py-16 md:py-24">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
 
             {/* Left */}
@@ -150,11 +151,17 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <GutterSeparator />
       <AboutSection />
+      <GutterSeparator />
       <StackSection />
+      <GutterSeparator />
       <ExperienceSection />
+      <GutterSeparator />
       <ProjectsSection />
+      <GutterSeparator />
       <ContributionSection />
+      <GutterSeparator />
       <LinksSection />
     </main>
   );

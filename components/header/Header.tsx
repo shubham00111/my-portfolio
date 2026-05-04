@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header
       className={`sticky top-0 z-50 bg-background/90 backdrop-blur-sm transition-all duration-200 ${
-        scrolled ? "border-b border-border shadow-sm" : "border-b border-transparent"
+        scrolled ? "border-b border-line shadow-sm" : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto max-w-5xl px-5 h-14 flex items-center justify-between gap-4">

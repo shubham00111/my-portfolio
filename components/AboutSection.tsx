@@ -2,15 +2,17 @@ import { user } from "@/app/data/user";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="border-b border-border">
-      <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+    <section id="about">
+      <div className="screen-line-bottom px-5 py-6">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
           01
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
           About
         </h2>
+      </div>
 
+      <div className="px-5 py-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Bio */}
           <div className="md:col-span-2 space-y-4">

@@ -117,15 +117,17 @@ const ExperienceSection = () => {
   const education = EXPERIENCES.filter((p) => p.type === "education");
 
   return (
-    <section id="experience" className="border-b border-border">
-      <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+    <section id="experience">
+      <div className="screen-line-bottom px-5 py-6">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
           03
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
           Experience
         </h2>
+      </div>
 
+      <div className="px-5 py-10">
         <div className="space-y-5 mb-12">
           {workExperience.map((position) => (
             <WorkCard key={position.id} position={position} />

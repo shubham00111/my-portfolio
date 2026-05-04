@@ -21,8 +21,13 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.className} antialiased`}>
         <Provider>
           <Header />
-          {children}
-          <Footer />
+          {/* overflow-x-clip prevents the Separator pseudo-elements from causing a scrollbar */}
+          <div className="overflow-x-clip">
+            <div className="mx-auto max-w-5xl border-x border-line">
+              {children}
+              <Footer />
+            </div>
+          </div>
         </Provider>
       </body>
     </html>

@@ -37,15 +37,17 @@ const ContributionSection = () => {
   const totalCount = data.reduce((sum, d) => sum + d.count, 0);
 
   return (
-    <section id="contributions" className="border-b border-border">
-      <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+    <section id="contributions">
+      <div className="screen-line-bottom px-5 py-6">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
           05
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
           Contributions
         </h2>
+      </div>
 
+      <div className="px-5 py-10">
         <div className="nb-card flex flex-col md:flex-row">
           {/* Graph column */}
           <div className="flex-1 min-w-0 p-5">

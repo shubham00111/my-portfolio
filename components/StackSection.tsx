@@ -42,15 +42,17 @@ const TIERS: { key: SkillTier; label: string }[] = [
 const StackSection = () => {
   return (
     <TooltipProvider delayDuration={100}>
-      <section id="skills" className="border-b border-border">
-        <div className="mx-auto max-w-5xl px-5 py-16">
-          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+      <section id="skills">
+        <div className="screen-line-bottom px-5 py-6">
+          <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
             02
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Skills
           </h2>
+        </div>
 
+        <div className="px-5 py-10">
           <div className="space-y-10">
             {TIERS.map(({ key, label: tierLabel }) => {
               const categories = SKILL_CATEGORIES.filter((c) => c.tier === key);
