@@ -16,7 +16,7 @@ const NAV_LINKS = [
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 overflow-x-hidden bg-background">
+    <header className="sticky top-0 z-50 overflow-x-hidden bg-background px-2 pt-2">
       <div className="screen-line-top screen-line-bottom mx-auto flex h-14 items-center justify-between gap-4 border-x border-line px-5 max-w-5xl">
         {/* Logo */}
         <Link href="/" className="flex items-center select-none shrink-0">
