@@ -6,21 +6,21 @@ import ThemeButton from "../ThemeButton";
 import { user } from "@/app/data/user";
 
 const NAV_LINKS = [
-  { label: "About",      href: "/#about" },
-  { label: "Skills",     href: "/#skills" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
   { label: "Experience", href: "/#experience" },
-  { label: "Projects",   href: "/#projects" },
-  { label: "Blog",       href: "/blog" },
-  { label: "Connect",    href: "/#connect" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Blog", href: "/blog" },
+  { label: "Connect", href: "/#connect" },
 ];
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 overflow-x-hidden bg-background px-2 pt-2">
-      <div className="screen-line-top screen-line-bottom mx-auto flex h-14 items-center justify-between gap-4 border-x border-line px-5 max-w-5xl">
+    <header className="bg-background sticky top-0 z-50 overflow-x-hidden px-2 pt-2">
+      <div className="screen-line-top screen-line-bottom border-line mx-auto flex h-14 max-w-4xl items-center justify-between gap-4 border-x px-5">
         {/* Logo */}
-        <Link href="/" className="flex items-center select-none shrink-0">
-          <span className="font-bold text-base tracking-tight">
+        <Link href="/" className="flex shrink-0 items-center select-none">
+          <span className="text-base font-bold tracking-tight">
             Shubham Rawat
           </span>
         </Link>
@@ -28,12 +28,12 @@ const Header = () => {
         <div className="flex-1" />
 
         {/* Center nav */}
-        <nav className="hidden md:flex items-center gap-0.5">
+        <nav className="hidden items-center gap-0.5 md:flex">
           {NAV_LINKS.map(({ label, href }) => (
             <a
               key={label}
               href={href}
-              className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md hover:bg-muted transition-colors duration-150"
+              className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-150"
             >
               {label}
             </a>
@@ -41,11 +41,11 @@ const Header = () => {
         </nav>
 
         {/* Right actions */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={user.resumePath}
             download
-            className="hidden sm:flex nb-btn-primary px-3 py-1.5 text-sm"
+            className="nb-btn-primary hidden px-3 py-1.5 text-sm sm:flex"
           >
             <Download size={14} />
             Resume

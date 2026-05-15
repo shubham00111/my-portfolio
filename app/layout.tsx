@@ -4,6 +4,7 @@ import Header from "@/components/header/Header";
 import { spaceGrotesk } from "./fonts";
 import { Provider } from "@/components/providers/Provider";
 import Footer from "@/components/Footer";
+import Oneko from "@/components/Oneko";
 
 export const metadata: Metadata = {
   title: "Shubham Rawat — Software Engineer",
@@ -23,12 +24,13 @@ export default function RootLayout({
           <Header />
           {/* overflow-x-clip prevents the Separator pseudo-elements from causing a scrollbar */}
           <div className="overflow-x-clip">
-            <div className="mx-auto max-w-5xl border-x border-line">
+            <div className="border-line mx-auto max-w-4xl border-x">
               {children}
               <Footer />
             </div>
           </div>
         </Provider>
+        <Oneko />
       </body>
     </html>
   );

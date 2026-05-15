@@ -28,24 +28,25 @@ const PLANNED_POSTS = [
 const BlogPage = () => {
   return (
     <main>
-      <section className="border-b-3 border-foreground">
-        <div className="mx-auto max-w-5xl px-5 py-16">
+      <section className="border-foreground border-b-3">
+        <div className="mx-auto max-w-4xl px-5 py-16">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-bold mb-8 hover:text-[#ff90e8] dark:hover:text-[#c96ab8] transition-colors"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-bold transition-colors hover:text-[#ff90e8] dark:hover:text-[#c96ab8]"
           >
             <ArrowLeft size={14} />
             Back to portfolio
           </Link>
 
-          <p className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-2">
+          <p className="text-muted-foreground mb-2 text-xs font-black tracking-widest uppercase">
             Writing
           </p>
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-3">
+          <h1 className="mb-3 text-4xl font-black tracking-tight uppercase md:text-5xl">
             Blog
           </h1>
-          <p className="text-muted-foreground font-medium text-sm mb-10">
-            Engineering notes on frontend, cloud, and GenAI tooling. Posts coming soon.
+          <p className="text-muted-foreground mb-10 text-sm font-medium">
+            Engineering notes on frontend, cloud, and GenAI tooling. Posts
+            coming soon.
           </p>
 
           <div className="space-y-4">
@@ -53,13 +54,15 @@ const BlogPage = () => {
               <div key={title} className="nb-card flex flex-col sm:flex-row">
                 {/* Color accent strip */}
                 <div
-                  className={`${color} border-b-3 sm:border-b-0 sm:border-r-3 border-foreground w-full sm:w-2 shrink-0`}
+                  className={`${color} border-foreground w-full shrink-0 border-b-3 sm:w-2 sm:border-r-3 sm:border-b-0`}
                 />
 
-                <div className="flex-1 p-5 flex flex-col sm:flex-row items-start justify-between gap-4">
-                  <div className="flex-1 min-w-0">
-                    <h2 className="font-black text-base mb-2 leading-snug">{title}</h2>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                <div className="flex flex-1 flex-col items-start justify-between gap-4 p-5 sm:flex-row">
+                  <div className="min-w-0 flex-1">
+                    <h2 className="mb-2 text-base leading-snug font-black">
+                      {title}
+                    </h2>
+                    <p className="text-muted-foreground mb-3 text-sm leading-relaxed">
                       {description}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -71,7 +74,7 @@ const BlogPage = () => {
                     </div>
                   </div>
 
-                  <span className="shrink-0 inline-flex items-center gap-1.5 border-3 border-foreground px-3 py-1.5 text-xs font-black bg-muted text-muted-foreground shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)]">
+                  <span className="border-foreground bg-muted text-muted-foreground inline-flex shrink-0 items-center gap-1.5 border-3 px-3 py-1.5 text-xs font-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_rgba(240,240,240,0.6)]">
                     <Clock size={11} />
                     Coming soon
                   </span>
