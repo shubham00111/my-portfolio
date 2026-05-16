@@ -19,13 +19,6 @@ const Header = () => {
     <header className="bg-background sticky top-0 z-50 overflow-x-hidden px-2 pt-2">
       <div className="screen-line-top screen-line-bottom border-line mx-auto flex h-14 max-w-4xl items-center justify-between gap-4 border-x px-5">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center select-none">
-          <span className="text-base font-bold tracking-tight">
-            Shubham Rawat
-          </span>
-        </Link>
-
-        <div className="flex-1" />
 
         {/* Center nav */}
         <nav className="hidden items-center gap-0.5 md:flex">
