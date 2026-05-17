@@ -23,8 +23,8 @@ export default function RootLayout({
         <Provider>
           <Header />
           {/* overflow-x-clip prevents the Separator pseudo-elements from causing a scrollbar */}
-          <div className="overflow-x-clip">
-            <div className="border-line mx-auto max-w-4xl border-x">
+          <div className="overflow-x-clip px-2">
+            <div className="border-line mx-auto max-w-3xl border-x">
               {children}
               <Footer />
             </div>

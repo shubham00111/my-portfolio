@@ -29,7 +29,7 @@ const BlogPage = () => {
   return (
     <main>
       <section className="border-foreground border-b-3">
-        <div className="mx-auto max-w-4xl px-5 py-16">
+        <div className="mx-auto max-w-3xl px-5 py-16">
           <Link
             href="/"
             className="mb-8 inline-flex items-center gap-2 text-sm font-bold transition-colors hover:text-[#ff90e8] dark:hover:text-[#c96ab8]"

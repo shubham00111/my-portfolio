@@ -17,11 +17,11 @@ const NAV_LINKS = [
 const Header = () => {
   return (
     <header className="bg-background sticky top-0 z-50 overflow-x-hidden px-2 pt-2">
-      <div className="screen-line-top screen-line-bottom border-line mx-auto flex h-14 max-w-4xl items-center justify-between gap-4 border-x px-5">
-        {/* Logo */}
+      <div className="screen-line-top screen-line-bottom border-line mx-auto flex h-14 max-w-3xl items-center justify-end gap-4 border-x px-5 md:justify-between">
+        {/* Logo — visible only on mobile when nav is hidden */}
 
         {/* Center nav */}
-        <nav className="hidden items-center gap-0.5 md:flex">
+        <nav className="hidden items-center gap-0.5 md:flex md:justify-end">
           {NAV_LINKS.map(({ label, href }) => (
             <a
               key={label}

@@ -16,39 +16,39 @@ export default function Portfolio() {
     <main>
       {/* ── HERO ── */}
       <section className="screen-line-top">
-        <div className="px-5 py-16 md:py-24">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
-
+        <div className="px-5 py-16 md:py-16">
+          <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
             {/* Left */}
-            <div className="flex-1 min-w-0">
+            <div className="min-w-0 flex-1">
               {/* Open-to-work badge */}
-              <span className="mb-6 inline-flex items-center gap-2 border border-border bg-muted px-3 py-1 text-xs font-medium rounded-full text-muted-foreground">
-                <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse shrink-0" />
+              <span className="border-border bg-muted text-muted-foreground mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium">
+                <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-green-500" />
                 Open to SDE-2 / Senior Frontend roles
               </span>
 
               {/* Name */}
-              <h1 className="text-[clamp(2.75rem,9vw,5rem)] font-bold leading-[0.95] tracking-tight mt-4 mb-5">
+              <h1 className="mt-4 mb-5 text-[clamp(2.75rem,9vw,5rem)] leading-[0.95] font-bold tracking-tight">
                 Shubham
                 <br />
                 <span className="text-muted-foreground">Rawat</span>
               </h1>
 
               {/* Title + location */}
-              <div className="flex flex-wrap items-center gap-2.5 mb-4">
-                <span className="text-sm font-medium text-foreground">
+              <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                <span className="text-foreground text-sm font-medium">
                   Software Engineer
                 </span>
-                <span className="h-1 w-1 rounded-full bg-border" />
-                <span className="flex items-center gap-1 text-muted-foreground text-sm">
-                  <MapPin size={13} className="shrink-0" />
+                <span className="bg-border h-1 w-1 rounded-full" />
+                <span className="text-muted-foreground flex items-center gap-1 text-sm">
+                  <MapPin size={13} className="shrink-0" color="#cc2727" />
                   {user.location}
                 </span>
               </div>
 
               {/* Stack line */}
-              <p className="text-muted-foreground text-sm mb-10">
-                React · TypeScript · AWS · Java Spring Boot · 3.5 Years in Fintech
+              <p className="text-muted-foreground mb-10 text-sm">
+                React · TypeScript · AWS · Java Spring Boot · 3.5 Years in
+                Fintech
               </p>
 
               {/* CTAs */}
@@ -83,20 +83,21 @@ export default function Portfolio() {
               </div>
 
               {/* Now strip */}
-              <p className="text-xs text-muted-foreground font-medium mt-6 border-l-2 border-border pl-3">
-                Currently: exploring AI agent frameworks · building with AWS Bedrock · reading DDIA
+              <p className="text-muted-foreground border-border mt-6 border-l-2 pl-3 text-xs font-medium">
+                Currently: exploring AI agent frameworks · building with AWS
+                Bedrock · reading DDIA
               </p>
             </div>
 
             {/* Right — profile + contact */}
-            <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
-              <div className="rounded-2xl border border-border overflow-hidden shadow-sm">
+            <div className="flex shrink-0 flex-col items-center gap-4 md:items-end">
+              <div className="border-border overflow-hidden rounded-2xl border shadow-sm">
                 <Image
                   src={profileImage}
                   alt="Shubham Rawat"
                   width={200}
                   height={200}
-                  className="object-cover block"
+                  className="block object-cover"
                   priority
                 />
               </div>
