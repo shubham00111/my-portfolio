@@ -5,7 +5,7 @@ const AboutSection = () => {
     <section id="about">
       <div className="screen-line-bottom px-5 py-6">
         <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-1">
-          01
+          02
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
           About

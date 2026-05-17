@@ -11,24 +11,6 @@ import LinksSection from "@/components/LinksSection";
 import GutterSeparator from "@/components/GutterSeparator";
 import { user } from "./data/user";
 
-const STATS = [
-  {
-    value: "80%",
-    label: "Infra Cost Reduction",
-    subtitle: "AWS migration",
-  },
-  {
-    value: "60%",
-    label: "Faster Delivery",
-    subtitle: "Figma-to-Code POC",
-  },
-  {
-    value: "90%",
-    label: "Security Vulns Fixed",
-    subtitle: "Remediation sprint",
-  },
-];
-
 export default function Portfolio() {
   return (
     <main>
@@ -68,27 +50,6 @@ export default function Portfolio() {
               <p className="text-muted-foreground text-sm mb-10">
                 React · TypeScript · AWS · Java Spring Boot · 3.5 Years in Fintech
               </p>
-
-              {/* Impact stats */}
-              <div className="flex flex-wrap gap-4 mb-10">
-                {STATS.map(({ value, label, subtitle }) => (
-                  <a
-                    key={label}
-                    href="#experience"
-                    className="group flex flex-col gap-0.5 px-4 py-3 rounded-xl border border-border bg-card hover:bg-muted transition-colors duration-150 min-w-[96px]"
-                  >
-                    <p className="text-2xl font-bold leading-none text-foreground">
-                      {value}
-                    </p>
-                    <p className="text-xs font-medium leading-tight text-foreground/80 mt-1">
-                      {label}
-                    </p>
-                    <p className="text-[11px] leading-tight text-muted-foreground">
-                      {subtitle}
-                    </p>
-                  </a>
-                ))}
-              </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
@@ -152,11 +113,11 @@ export default function Portfolio() {
       </section>
 
       <GutterSeparator />
+      <ExperienceSection />
+      <GutterSeparator />
       <AboutSection />
       <GutterSeparator />
       <StackSection />
-      <GutterSeparator />
-      <ExperienceSection />
       <GutterSeparator />
       <ProjectsSection />
       <GutterSeparator />

@@ -37,7 +37,7 @@ const StackSection = () => {
     <section id="skills">
       <div className="screen-line-bottom px-5 py-6">
         <p className="text-muted-foreground mb-1 text-xs font-medium tracking-widest uppercase">
-          02
+          03
         </p>
         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
           Skills

@@ -13,6 +13,29 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+export const SKILL_ICON_MAP: Record<string, { icon?: string; fallback?: string }> = {
+  "React":                 { icon: "devicon:react" },
+  "TypeScript":            { icon: "devicon:typescript" },
+  "JavaScript":            { icon: "devicon:javascript" },
+  "Redux":                 { icon: "devicon:redux" },
+  "Java Spring Boot":      { icon: "devicon:spring" },
+  "AWS S3":                { icon: "logos:aws" },
+  "AWS CloudFront":        { icon: "logos:aws" },
+  "AWS Bedrock":           { fallback: "BDK" },
+  "Socket.io":             { icon: "devicon:socketio" },
+  "Storybook":             { icon: "devicon:storybook" },
+  "Jest":                  { icon: "logos:jest" },
+  "Cypress":               { icon: "logos:cypress-icon" },
+  "Docker":                { icon: "devicon:docker" },
+  "CI/CD":                 { icon: "logos:github-actions" },
+  "Figma":                 { icon: "devicon:figma" },
+  "Bootstrap":             { icon: "devicon:bootstrap" },
+  "React Bootstrap":       { icon: "devicon:bootstrap" },
+  "React Testing Library": { fallback: "RTL" },
+  "Enzyme":                { fallback: "ENZ" },
+  "Git":                   { icon: "devicon:git" },
+};
+
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     label: "Languages",

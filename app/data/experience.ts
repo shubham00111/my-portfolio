@@ -21,14 +21,10 @@ export const EXPERIENCES: Position[] = [
   {
     id: "tsys-se",
     type: "work",
-    title: "Software Engineer",
-    company: "TSYS – Global Payments",
-    companyUrl: "https://www.tsys.com/",
-    logo: "/experience/tsys.jpg",
-    acquisitionNote: {
-      text: "Acquired by FIS Global, 2026",
-      logo: "/experience/fis.png",
-    },
+    title: "Software Engineer II",
+    company: "FIS Global",
+    companyUrl: "https://www.fisglobal.com/",
+    logo: "/experience/fis.png",
     period: "Jul 2025 – Present",
     employmentType: "Full-time",
     location: "Noida, India",
